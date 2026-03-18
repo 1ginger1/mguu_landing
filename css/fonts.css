@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Golos Text';
+    src: url(../fonts/GolosText-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url(../fonts/GolosText-SemiBold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url(../fonts/GTWalsheimPro-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url(../fonts/GTWalsheimPro-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url(../fonts/GTWalsheimPro-Bold.ttf);
+    font-weight: 700;
+}

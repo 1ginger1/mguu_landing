@@ -1,0 +1,414 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Палитра */
+    --color-primary-green: #D7FF72;
+    --color-secondary-green: #C2E46C;
+    --color-dark-green: #A5CC42;
+    --color-secondary: #212121;
+    --color-primary-white: #FFFFFF;
+    --color-secondary-white: #FEFFFB;
+
+    /* Отступы или шрифты тоже можно сюда */
+    --font-primary: 'Golos Text', sans-serif;
+    --font-secondary: 'GT Walsheim Pro', sans-serif;
+    --section-spacing: 120px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: #101010;
+    overflow-x: hidden;
+    /* background-image: url('../img/main_bg_920.png');
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 19px 54px;
+    cursor: pointer;
+    background-color: var(--color-secondary-green);
+    border: none;
+    border-radius: 64px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    transition: 0.1s all;
+    align-self: flex-start;
+}
+
+.button--small {
+    padding: 13px 24px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.section {
+    padding-top: 120px;
+}
+
+.item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+}
+
+.title {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--color-primary-white);
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.title--color-white {
+    color: var(--color-primary-white);
+    font-weight: 600;
+}
+
+.title--color-primary {
+    font-weight: 600;
+    color: var(--color-primary-green);
+}
+
+.descr {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--color-primary-white);
+}
+
+/* Шапка */
+.header {
+    padding: 11px 0;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo-group {
+    display: flex;
+    gap: 32px;
+    align-items: end;
+}
+
+.header__navigation {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.header__link {
+    text-decoration: none;
+    color: var(--color-primary-white);
+    font-size: 14px;
+}
+
+/* Блок ИТ-ГОРОД */
+.hero {
+    padding-top: 40px;
+    font-family: var(--font-secondary);
+    color: var(--color-primary-white);
+}
+
+.hero__container {
+    display: flex;
+    gap: 20px;
+}
+
+.hero__card--info {
+    position: relative
+}
+
+.hero__card {
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.hero__button {
+    margin-top: 40px;
+}
+
+.hero__title {
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 90%;
+}
+
+.hero__subtitle {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+}
+
+.hero__description {
+    margin-top: 74px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.hero__image-wrapper {
+    position: relative;
+    height: 392px;
+    width: 710px;
+    background: linear-gradient(118.78deg, #9A14F4 2.1%, #212121 96.02%),
+        linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
+    border-radius: 20px;
+}
+
+.hero__image {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.hero__slogan {
+    margin-top: 38px;
+    font-size: 34px;
+    color: var(--color-primary-green);
+    text-align: center;
+}
+
+/* Позиционирование декоратиынйх линий  */
+/* Блок 1 */
+.hero__card--info .hero__decor img:nth-child(1) {
+    position: absolute;
+    top: 42px;
+    left: 0;
+}
+
+.hero__card--info .hero__decor img:nth-child(2) {
+    position: absolute;
+    right: 0;
+    bottom: 68px;
+}
+
+/* Блок 2 */
+.hero__card--visual .hero__decor img:nth-child(1) {
+    position: absolute;
+    right: -28px;
+    top: 24px;
+    z-index: 3;
+}
+
+.hero__card--visual .hero__decor img:nth-child(2) {
+    position: absolute;
+    bottom: 31px;
+    left: -40px;
+    z-index: 1;
+}
+
+.hero__card--visual .hero__decor img:nth-child(3) {
+    position: absolute;
+    top: 16px;
+    right: -40px;
+    z-index: 1;
+}
+
+.hero__card--visual .hero__decor img:nth-child(4) {
+    position: absolute;
+    top: 40px;
+    right: 81px;
+    z-index: 2;
+}
+
+/* блок Информация */
+.stats__list {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.stats__item {
+    padding: 29px 40px;
+    border-radius: 16px;
+}
+
+.stats__label {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.stats__value {
+    margin-top: 20px;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.stats__decore {
+    position: absolute;
+    top: 20px;
+    right: -161px;
+    z-index: -1;
+}
+
+/* Блок Стажировка */
+.features__content {
+    margin-top: 32px;
+    display: flex;
+    gap: 20px;
+}
+
+.features__image-box {
+    border-radius: 32px;
+    height: 653px;
+    width: 655px;
+    background-color: var(--color-secondary);
+    background-image: url('../img/girl2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.features__list {
+    background-color: transparent;
+}
+
+.features__item {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+.features__item:nth-child(1) {
+    margin-top: 0;
+}
+
+.features__item-icon {
+    flex-shrink: 0
+}
+
+.features__item-title {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.features__item-desc {
+    margin-top: 12px;
+}
+
+.features__item:nth-last-child(1) .features__item-desc {
+    max-width: 778px;
+}
+
+.features__stats {
+    padding: 0 21px;
+    position: relative;
+    margin-top: 160px;
+    display: flex;
+    gap: 60px;
+}
+
+.features__stat-card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.features__stat-icon {
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 120px;
+    top: -62px;
+}
+
+.features__stat-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.features__stat-card:nth-child(1) {
+    max-width: 263px;
+}
+
+.features__stat-card:nth-child(1) .features__stat-icon {
+    left: 151px;
+}
+
+.features__stat-card:nth-child(2) {
+    max-width: 383px;
+}
+
+.features__stat-card:nth-child(2) .features__stat-icon {
+    left: 172px;
+}
+
+.features__stat-card:nth-child(3) {
+    max-width: 381px;
+}
+
+.features__stat-card:nth-child(3) .features__stat-icon {
+    left: 186px;
+}
+
+.features__stat-card:nth-child(4) {
+    max-width: 315px;
+}
+
+.features__stat-card:nth-child(4) .features__stat-icon {
+    left: 271px;
+}
+
+.features__stat-value {
+    font-size: 56px;
+    line-height: 64px;
+}
+
+.features__stat-label {
+    margin-top: 8px;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.features__button {
+    margin-top: 57px;
+}
+
+.features__stat-card:nth-last-child(1) .features__stat-label {
+    max-width: 231px;
+}
+
+.features__decore {
+    position: absolute;
+    left: -79px;
+    bottom: 20px;
+    z-index: -1;
+}
+
+@media (pointer: fine) {
+
+    /* Стили при наведении */
+    .button:hover {
+        background-color: var(--color-secondary-white);
+    }
+
+    /* Стили при наведении И нажатии одновременно */
+    .button:hover:active {
+        background-color: var(--color-dark-green);
+    }
+}
