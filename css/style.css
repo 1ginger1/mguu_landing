@@ -48,6 +48,7 @@ body {
     color: var(--color-secondary);
     transition: 0.1s all;
     align-self: flex-start;
+    font-family: var(--font-primary);
 }
 
 .button--small {
