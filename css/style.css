@@ -17,6 +17,7 @@
     --font-primary: 'Golos Text', sans-serif;
     --font-secondary: 'GT Walsheim Pro', sans-serif;
     --section-spacing: 120px;
+    --content-wrap-mt: 32px;
 }
 
 body {
@@ -34,6 +35,8 @@ body {
 }
 
 .button {
+    display: inline-block;
+    text-decoration: none;
     padding: 19px 54px;
     cursor: pointer;
     background-color: var(--color-secondary-green);
@@ -54,7 +57,7 @@ body {
 }
 
 .section {
-    padding-top: 120px;
+    margin-top: 120px;
 }
 
 .item {
@@ -62,6 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--color-secondary);
+    padding: 40px;
 }
 
 .title {
@@ -87,6 +91,32 @@ body {
     font-size: 20px;
     line-height: 30px;
     color: var(--color-primary-white);
+}
+
+.descr--green {
+    color: var(--color-primary-green);
+}
+
+.tag {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.12s ease;
+}
+
+.tag::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #663CD3 0%, #7417B2 100%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
 }
 
 /* Шапка */
@@ -142,7 +172,6 @@ body {
 
 .hero__card {
     border-radius: 24px;
-    padding: 40px;
 }
 
 .hero__button {
@@ -267,7 +296,7 @@ body {
 
 /* Блок Стажировка */
 .features__content {
-    margin-top: 32px;
+    margin-top: var(--content-wrap-mt);
     display: flex;
     gap: 20px;
 }
@@ -277,12 +306,13 @@ body {
     height: 653px;
     width: 655px;
     background-color: var(--color-secondary);
-    background-image: url('../img/girl2.png');
+    background-image: url('../img/girl2.svg');
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .features__list {
+    padding: 0;
     background-color: transparent;
 }
 
@@ -400,15 +430,335 @@ body {
     z-index: -1;
 }
 
-@media (pointer: fine) {
+/* Блок "Что такое ДИТ" */
+.about-dit__container {
+    position: relative;
+    padding-bottom: 42px;
+}
 
-    /* Стили при наведении */
+.about-dit__decore {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.about-dit__title {
+    line-height: 46px;
+}
+
+.about-dit__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 103px;
+}
+
+.about-dit__description {
+    margin-top: var(--content-wrap-mt);
+}
+
+.about-dit__highlight {
+    margin-top: 80px;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.about-dit__text {
+    margin-top: 16px;
+    max-width: 654px;
+}
+
+.about-dit__text:first-child {
+    margin-top: 0;
+    max-width: 100%;
+}
+
+.about-dit__visual {
+    margin-top: 11px;
+    width: 790px;
+    height: 529px;
+    border-radius: 16px;
+    background: url('../img/dit-room.svg') center center / cover no-repeat;
+    flex-shrink: 0;
+}
+
+.about-dit__footer {
+    margin-top: 32px;
+}
+
+.about-dit__partners {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    white-space: nowrap;
+}
+
+.partner-chip {
+    display: flex;
+    padding: 8px 8px 8px 25px;
+    align-items: center;
+    gap: 24px;
+    background: rgba(33, 33, 33, 0.2);
+    border-radius: 46px;
+    flex-shrink: 0;
+
+    backdrop-filter: blur(10px);
+    box-shadow:
+        inset -0.75px -0.5px rgba(255, 255, 255, 0.1),
+        inset +0.75px +0.5px rgba(255, 255, 255, 0.025),
+        3px 2px 10px rgba(0, 0, 0, 0.25),
+        inset 0px 0px 10px 5px rgba(255, 255, 255, 0.025);
+}
+
+.partner-chip__name {
+    line-height: 24px;
+}
+
+.partner-chip__icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 64px;
+    background-color: var(--color-primary-white);
+    border-radius: 100px;
+}
+
+.marquee__inner {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: 24px;
+    padding-right: 24px;
+    width: max-content;
+    animation: scroll-left 60s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Блок "Кого мы ждем" */
+.candidates__title {
+    line-height: 48px;
+}
+
+.candidates__list {
+    margin-top: var(--content-wrap-mt);
+    display: flex;
+    gap: 20px;
+}
+
+.candidates__card {
+    position: relative;
+    border-radius: 16px;
+    height: 419px;
+}
+
+.candidates__person {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* height: 264px;
+    width: auto; */
+}
+
+.candidates__icon {
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    z-index: 4;
+}
+
+.candidates__icon--left {
+    top: 149px;
+    right: -67px;
+}
+
+.candidates__icon--right {
+    top: 203px;
+    right: -55px;
+}
+
+/* Блок Выбери направление стажировки */
+.directions__title {
+    line-height: 48px;
+}
+
+.directions__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.directions__content {
+    flex: 1;
+    padding: 63px 0;
+}
+
+.directions__tags {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: var(--content-wrap-mt);
+}
+
+.directions__tag {
+    padding: 12px 16px;
+    border-radius: 40px;
+    line-height: 28px;
+}
+
+.directions__stickers {
+    height: 409px;
+    flex-shrink: 0;
+}
+
+/* Блок Как попасть на стажировку */
+.steps__container {
+    position: relative;
+}
+
+.steps__title {
+    line-height: 42px;
+}
+
+.steps__list {
+    margin-top: var(--content-wrap-mt);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.steps__item {
+    position: relative;
+    flex: 0 1 calc(33.333% - 14px);
+    height: 260px;
+    border-radius: 24px;
+}
+
+.steps__number,
+.steps__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: 46px;
+    border-radius: 100%;
+    background: var(--color-primary-white);
+}
+
+.steps__number {
+    color: var(--color-secondary);
+    font-size: 32px;
+}
+
+.steps__text {
+    margin-top: 24px;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.steps__icon {
+    padding: 0;
+    position: absolute;
+    background-color: var(--color-primary-green);
+    bottom: 40px;
+    right: 40px;
+    z-index: 2;
+}
+
+.steps__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.steps__bg {
+    position: absolute;
+    bottom: -3px;
+    right: -161px;
+}
+
+/* Блок "Хочешь развивать масштабные цифровые проекты столицы? " */
+.cta__container {
+    display: flex;
+    gap: 75px;
+    justify-content: flex-start;
+    height: 397px;
+}
+
+.cta__content {
+    position: relative;
+    padding: 75px 0;
+    width: 768px;
+}
+
+.cta__decor-line {
+    position: absolute;
+    bottom: 0;
+    left: 330px;
+}
+
+.cta__subtitle {
+    margin-top: 16px;
+    font-size: 32px;
+    line-height: 36px;
+}
+
+.cta__button {
+    margin-top: 40px;
+}
+
+.cta__visual {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cta__team-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.cta__team-img {
+    width: 703px;
+}
+
+.cta__title {
+    line-height: 50px;
+}
+
+@media (pointer: fine) {
     .button:hover {
         background-color: var(--color-secondary-white);
     }
 
-    /* Стили при наведении И нажатии одновременно */
     .button:hover:active {
         background-color: var(--color-dark-green);
+    }
+
+    /* Наведение */
+    .tag:hover {
+        border-color: transparent;
+    }
+
+    .tag:hover::before {
+        opacity: 1;
+        /* Плавно проявляем градиент */
+    }
+
+    /* Активное состояние (клик) */
+    .tag:active::before {
+        background: linear-gradient(180deg, #4317B7 0%, #6403A5 100%);
     }
 }
