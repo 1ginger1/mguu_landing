@@ -522,7 +522,7 @@ body {
     align-items: center;
     height: 64px;
     width: 64px;
-    background-color: var(--color-primary-white);
+    /* background-color: var(--color-primary-white); */
     border-radius: 100px;
 }
 
