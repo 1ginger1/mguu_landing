@@ -19,6 +19,7 @@
     --section-spacing: 120px;
     --content-wrap-mt: 32px;
     --speed-animation: 60s;
+    --cursor: url('../img/cursor.svg') 12 12, pointer;
 }
 
 body {
@@ -30,6 +31,10 @@ body {
     background-position: center; */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -39,7 +44,7 @@ body {
     display: inline-block;
     text-decoration: none;
     padding: 19px 54px;
-    cursor: pointer;
+    cursor: var(--cursor);
     background-color: var(--color-secondary-green);
     border: none;
     border-radius: 64px;
@@ -108,7 +113,7 @@ body {
     position: relative;
     border: 1px solid rgba(255, 255, 255, 1);
     background: transparent;
-    cursor: pointer;
+    cursor: var(--cursor);
     overflow: hidden;
     transition: border-color 0.12s ease;
 }
@@ -126,9 +131,34 @@ body {
     z-index: -1;
 }
 
+.link {
+    color: var(--color-primary-white);
+    font-size: 14px;
+    transition: 0.1s all;
+    cursor: var(--cursor);
+}
+
 /* Шапка */
 .header {
     padding: 11px 0;
+    background: #101010;
+    box-shadow: 0px 4px 20px 0px #10101040;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+    will-change: transform;
+}
+
+.header--fixed {
+    position: fixed;
+    transform: translateY(-100%);
+}
+
+.header--visible {
+    transform: translateY(0);
 }
 
 .header__container {
@@ -157,13 +187,11 @@ body {
 
 .header__link {
     text-decoration: none;
-    color: var(--color-primary-white);
-    font-size: 14px;
 }
 
 /* Блок ИТ-ГОРОД */
 .hero {
-    padding-top: 40px;
+    padding-top: 112px;
     font-family: var(--font-secondary);
     color: var(--color-primary-white);
 }
@@ -531,7 +559,7 @@ body {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left var(--speed-animation) linear infinite;
+    /* animation: scroll-left var(--speed-animation) linear infinite; */
 }
 
 @keyframes scroll-left {
@@ -643,18 +671,19 @@ body {
     height: 260px;
     border-radius: 24px;
     overflow: hidden;
+    cursor: var(--cursor);
 }
 
 .steps__content {
     position: absolute;
     inset: 0;
     padding: 40px;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s, 0.1s background;
     backface-visibility: hidden;
+    border-radius: 24px;
 }
 
 .steps__content--front {
-    background: var(--color-bg-primary);
     z-index: 2;
     transform: rotateY(0deg);
 }
@@ -664,7 +693,16 @@ body {
     transform: rotateY(180deg);
     opacity: 0;
     z-index: 1;
-    border-radius: 24px;
+}
+
+.steps__content--back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #4C00B1 0%, #160728 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
 }
 
 /* КЛАСС-МОДИФИКАТОР ПРИ КЛИКЕ */
@@ -706,6 +744,7 @@ body {
     bottom: 40px;
     right: 40px;
     z-index: 2;
+    /* cursor: url('../img/cursor.svg') 12 12, pointer; */
 }
 
 /* Поворот стрелочки на фиолетовой стороне */
@@ -743,7 +782,7 @@ body {
     width: 100%;
     background: transparent;
     border: none;
-    cursor: pointer;
+    cursor: var(--cursor);
 }
 
 .faq__question-text,
@@ -901,16 +940,69 @@ body {
     line-height: 20px;
 }
 
-.footer__legal-link {
-    color: var(--color-primary-white);
-}
-
 .footer__info {
     padding-top: 122px;
 }
 
 .footer__contacts {
     padding-top: 70px;
+}
+
+.footer__link {
+    transition: 0.1s all;
+    cursor: var(--cursor);
+}
+
+/* Конка вверх */
+.up-button {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 6;
+}
+
+.up-button__inner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.up-button__link {
+    position: relative;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 100%;
+    background: linear-gradient(118.78deg, #DDD1FB 2.1%, #7E16EF 65.32%);
+    overflow: hidden;
+
+    /* Состояния анимации */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.12s ease;
+}
+
+.up-button__link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #663CD3 0%, #7417B2 100%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+}
+
+.up-button__link--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 @media (pointer: fine) {
@@ -922,6 +1014,23 @@ body {
 
     .button:hover:active {
         background-color: var(--color-dark-green);
+    }
+
+    /* Ссылки */
+    .link:hover {
+        color: var(--color-primary-green);
+    }
+
+    .link:active {
+        color: var(--color-dark-green);
+    }
+
+    .footer__link:hover {
+        color: var(--color-primary-white);
+    }
+
+    .footer__link:active {
+        color: var(--color-dark-green);
     }
 
     /* Теги блока "Выбери направление стажировки" */
@@ -952,5 +1061,25 @@ body {
 
     .faq__question:active .faq__arrow svg path {
         fill: var(--color-dark-green);
+    }
+
+    .up-button__link:hover {
+        border-color: transparent;
+    }
+
+    .up-button__link:hover::before {
+        opacity: 1;
+    }
+
+    .up-button__link:active::before {
+        background: linear-gradient(180deg, #4317B7 0%, #6403A5 100%);
+    }
+
+    .steps__content--front:hover {
+        background-color: #2C2C2C;
+    }
+
+    .steps__content--back:hover::before {
+        opacity: 1;
     }
 }
