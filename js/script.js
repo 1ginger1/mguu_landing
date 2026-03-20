@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        if (currentScroll < 0) {
+        if (currentScroll < 3) {
             if (header.classList.contains('header--visible')) {
                 header.classList.remove('header--fixed', 'header--visible');
             }
