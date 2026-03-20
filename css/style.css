@@ -18,6 +18,7 @@
     --font-secondary: 'GT Walsheim Pro', sans-serif;
     --section-spacing: 120px;
     --content-wrap-mt: 32px;
+    --speed-animation: 60s;
 }
 
 body {
@@ -85,6 +86,11 @@ body {
 .title--color-primary {
     font-weight: 600;
     color: var(--color-primary-green);
+}
+
+.title--small {
+    font-size: 28px;
+    line-height: 36px;
 }
 
 .descr {
@@ -277,11 +283,6 @@ body {
     border-radius: 16px;
 }
 
-.stats__label {
-    font-size: 28px;
-    line-height: 36px;
-}
-
 .stats__value {
     margin-top: 20px;
     font-size: 32px;
@@ -412,8 +413,6 @@ body {
 
 .features__stat-label {
     margin-top: 8px;
-    font-size: 28px;
-    line-height: 36px;
 }
 
 .features__button {
@@ -461,8 +460,6 @@ body {
 
 .about-dit__highlight {
     margin-top: 80px;
-    font-size: 28px;
-    line-height: 36px;
 }
 
 .about-dit__text {
@@ -534,7 +531,7 @@ body {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left 60s linear infinite;
+    /* animation: scroll-left var(--speed-animation) linear infinite; */
 }
 
 @keyframes scroll-left {
@@ -664,8 +661,6 @@ body {
 
 .steps__text {
     margin-top: 24px;
-    font-size: 28px;
-    line-height: 36px;
 }
 
 .steps__icon {
@@ -688,6 +683,69 @@ body {
     position: absolute;
     bottom: -3px;
     right: -161px;
+}
+
+/* Блок часто задаваемые вопросы */
+.faq__container {
+    position: relative;
+}
+
+.faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.faq__question-text,
+.faq__arrow svg path {
+    transition: 0.1s all;
+}
+
+.faq__item.active .faq__arrow {
+    transform: rotate(180deg);
+}
+
+.faq__item.active .faq__answer-inner {
+    display: block;
+}
+
+.faq__list {
+    margin-top: var(--content-wrap-mt);
+    max-width: 1186px;
+}
+
+.faq__item {
+    padding: 20px;
+    border-bottom: 1px solid #5B5B5B;
+}
+
+.faq__item:first-child {
+    border-top: 1px solid #5B5B5B;
+}
+
+.faq__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.faq__answer-inner {
+    display: none;
+    padding: 4px 0 20px 0;
+    max-width: 901px;
+}
+
+.faq__decor {
+    position: absolute;
+    top: 143px;
+    right: -154px;
 }
 
 /* Блок "Хочешь развивать масштабные цифровые проекты столицы? " */
@@ -739,7 +797,79 @@ body {
     line-height: 50px;
 }
 
+/* Подвал */
+.footer {
+    position: relative;
+}
+
+.footer__main {
+    display: flex;
+    gap: 610px;
+}
+
+.footer__decor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.footer__text {
+    margin-top: 12px;
+    max-width: 475px;
+}
+
+.footer__social {
+    margin-top: 40px;
+    display: flex;
+    gap: 22px;
+}
+
+.footer__title {
+    line-height: 48px;
+}
+
+.footer__logos {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    height: 63px;
+}
+
+.footer__logo {
+    display: block;
+    height: 100%;
+}
+
+.footer__logo:nth-child(2) {
+    height: 55px;
+}
+
+.footer__bottom {
+    margin: 64px 0 18px 0;
+    display: flex;
+    gap: 201px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer__legal-link {
+    color: var(--color-primary-white);
+}
+
+.footer__info {
+    padding-top: 122px;
+}
+
+.footer__contacts {
+    padding-top: 70px;
+}
+
 @media (pointer: fine) {
+
+    /* Кнопки */
     .button:hover {
         background-color: var(--color-secondary-white);
     }
@@ -748,18 +878,33 @@ body {
         background-color: var(--color-dark-green);
     }
 
-    /* Наведение */
+    /* Теги блока "Выбери направление стажировки" */
     .tag:hover {
         border-color: transparent;
     }
 
     .tag:hover::before {
         opacity: 1;
-        /* Плавно проявляем градиент */
     }
 
-    /* Активное состояние (клик) */
     .tag:active::before {
         background: linear-gradient(180deg, #4317B7 0%, #6403A5 100%);
+    }
+
+    /* Блок "Часто задаваемые вопросы" */
+    .faq__question:hover .faq__question-text {
+        color: var(--color-primary-green);
+    }
+
+    .faq__question:hover .faq__arrow svg path {
+        fill: var(--color-primary-green);
+    }
+
+    .faq__question:active .faq__question-text {
+        color: var(--color-dark-green);
+    }
+
+    .faq__question:active .faq__arrow svg path {
+        fill: var(--color-dark-green);
     }
 }
