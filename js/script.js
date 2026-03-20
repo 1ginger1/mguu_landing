@@ -24,4 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Блок Как попасть на стажировку
+    const cards = document.querySelectorAll('.steps__item');
+
+    cards.forEach(card => {
+        const triggers = card.querySelectorAll('.js-flip-trigger');
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation(); // Чтобы клик не срабатывал на родителе
+                card.classList.toggle('steps__item--flipped');
+            });
+        });
+    });
+
 });
