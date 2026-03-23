@@ -559,7 +559,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    /* animation: scroll-left var(--speed-animation) linear infinite; */
+    animation: scroll-left var(--speed-animation) linear infinite;
 }
 
 @keyframes scroll-left {
@@ -1003,6 +1003,51 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* Модальное окно  */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none; /* Скрыто по умолчанию */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Состояние открытия */
+.modal--active {
+    display: flex;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 16, 16, 0.85);
+}
+
+.modal__content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #1a102d 0%, #0d0d0d 100%);
+    border-radius: 32px;
+    padding: 48px;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal__tag {
+    padding: 21px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.modal__button {
+    margin-top: var(--content-wrap-mt);
 }
 
 @media (pointer: fine) {

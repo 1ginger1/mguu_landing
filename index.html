@@ -45,7 +45,7 @@
         </div>
     </header>
 
-    <section class="hero"  id="top">
+    <section class="hero" id="top">
         <div class="container hero__container">
             <article class="hero__card hero__card--info item">
                 <h1 class="hero__title">ИТ-ГОРОД</h1>
@@ -530,7 +530,7 @@
 
                     <div class="steps__content steps__content--back">
                         <p class="steps__descr descr">
-                            Остается только подписать документы, получить все необходимое для работы и... 
+                            Остается только подписать документы, получить все необходимое для работы и...
                             <br>
                             НАЧАТЬ СТАЖИРОВКУ!
                         </p>
@@ -977,7 +977,8 @@
                 <p class="footer__copyright">© Управление кадровых сервисов Правительства Москвы | Департамент
                     информационных технологий города Москвы, 2026</p>
                 <div class="footer__legal">
-                    <a href="https://mguu.ru/files/personal_data_policy.pdf" class="footer__legal-link link" target="_blank">Политика
+                    <a href="https://mguu.ru/files/personal_data_policy.pdf" class="footer__legal-link link"
+                        target="_blank">Политика
                         обработки персональных данных | </a>
                     <a href="https://ks.mguu.ru/wp-content/uploads/2025/08/polzovatelskoe-soglashenie.pdf"
                         class="footer__legal-link link" target="_blank">Пользовательское соглашение</a>
@@ -989,6 +990,7 @@
         </div>
     </footer>
 
+    <!-- Кнопка вверх -->
     <div class="up-button">
         <div class="container up-button__inner">
             <a href="#top" class="up-button__link">
@@ -998,6 +1000,39 @@
                         fill="white" />
                 </svg>
             </a>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal js-modal" id="modal-analysis">
+        <div class="modal__overlay js-modal-close"></div>
+
+        <div class="modal__content">
+            <!-- Кнопка закрытия -->
+            <button class="modal__close js-modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L3 3M21.0001 3L3 21.0001" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <!-- Декоративный стикер -->
+            <div class="modal__sticker">
+                <img src="img/sticker-bag.png" alt="">
+            </div>
+
+            <h2 class="modal__title title">Бизнес- и системный анализ</h2>
+            <p class="modal__subtitle descr">Выбирай направление, в котором хочешь развиваться.</p>
+
+            <!-- Выбор направлений -->
+            <div class="modal__options">
+                <div class="modal__tags">
+                    <button class="tag modal__tag">Ручное тестирование</button>
+                    <button class="tag modal__tag">Автотестирование</button>
+                </div>
+            </div>
+
+            <button class="button modal__button">Подать заявку</button>
         </div>
     </div>
 
