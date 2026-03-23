@@ -387,16 +387,20 @@
                 <h2 class="title directions__title">Выбери направление стажировки</h2>
 
                 <div class="directions__tags">
-                    <button class="tag directions__tag descr">Тестирование</button>
-                    <button class="tag directions__tag descr">Бизнес- и системный анализ</button>
-                    <button class="tag directions__tag descr">Аналитика данных</button>
-                    <button class="tag directions__tag descr">Разработка</button>
-                    <button class="tag directions__tag descr">Управление проектами</button>
-                    <button class="tag directions__tag descr">Системное администрирование</button>
-                    <button class="tag directions__tag descr">Поддержка пользователей и систем</button>
-                    <button class="tag directions__tag descr">Информационная безопасность</button>
-                    <button class="tag directions__tag descr">Машинное обучение (ML)</button>
-                    <button class="tag directions__tag descr">Дизайн</button>
+                    <button class="tag directions__tag descr" data-modal-tag="test">Тестирование</button>
+                    <button class="tag directions__tag descr" data-modal-tag="business">Бизнес- и системный
+                        анализ</button>
+                    <button class="tag directions__tag descr" data-modal-tag="data">Аналитика данных</button>
+                    <button class="tag directions__tag descr" data-modal-tag="develop">Разработка</button>
+                    <button class="tag directions__tag descr" data-modal-tag="project">Управление проектами</button>
+                    <button class="tag directions__tag descr" data-modal-tag="admin">Системное
+                        администрирование</button>
+                    <button class="tag directions__tag descr" data-modal-tag="support">Поддержка пользователей и
+                        систем</button>
+                    <button class="tag directions__tag descr" data-modal-tag="safety">Информационная
+                        безопасность</button>
+                    <button class="tag directions__tag descr" data-modal-tag="ml">Машинное обучение (ML)</button>
+                    <button class="tag directions__tag descr" data-modal-tag="design">Дизайн</button>
                 </div>
             </div>
 
@@ -1004,7 +1008,7 @@
     </div>
 
     <!-- Модальное окно -->
-    <div class="modal js-modal" id="modal-analysis">
+    <div class="modal" id="modal-analysis">
         <div class="modal__overlay js-modal-close"></div>
 
         <div class="modal__content">
@@ -1018,18 +1022,12 @@
 
             <!-- Декоративный стикер -->
             <div class="modal__sticker">
-                <img src="img/sticker-bag.png" alt="">
+                <img alt="Стикер" class="modal__img">
             </div>
-
-            <h2 class="modal__title title">Бизнес- и системный анализ</h2>
-            <p class="modal__subtitle descr">Выбирай направление, в котором хочешь развиваться.</p>
 
             <!-- Выбор направлений -->
             <div class="modal__options">
-                <div class="modal__tags">
-                    <button class="tag modal__tag">Ручное тестирование</button>
-                    <button class="tag modal__tag">Автотестирование</button>
-                </div>
+                
             </div>
 
             <button class="button modal__button">Подать заявку</button>

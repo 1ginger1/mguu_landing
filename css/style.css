@@ -559,7 +559,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left var(--speed-animation) linear infinite;
+    /* animation: scroll-left var(--speed-animation) linear infinite;  */
 }
 
 @keyframes scroll-left {
@@ -1010,7 +1010,8 @@ html {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    display: none; /* Скрыто по умолчанию */
+    display: none;
+    /* Скрыто по умолчанию */
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -1030,24 +1031,108 @@ html {
 .modal__content {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    background: linear-gradient(135deg, #1a102d 0%, #0d0d0d 100%);
+    max-width: 831px;
+    background: radial-gradient(25.2% 20.86% at 36.69% 38.79%, rgba(207, 65, 239, 0.43) 0%, rgba(132, 74, 255, 0) 100%);
+    background: #101010;
     border-radius: 32px;
     padding: 48px;
     z-index: 2;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: var(--cursor);
+}
+
+.modal__back {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: var(--cursor);
+}
+
+.modal__sticker {
+    position: absolute;
+    top: 16px;
+    right: 60px;
+    width: 85px;
+    height: 85px;
+}
+
+.modal__img {
+    width: 100%;
+    height: 100%;
+}
+
+.modal__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .modal__tag {
+    display: block;
+    width: 320px;
+    text-align: left;
     padding: 21px 24px;
     border-radius: 12px;
     font-weight: 600;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 20px;
+    color: var(--color-primary-white);
 }
 
 .modal__button {
     margin-top: var(--content-wrap-mt);
+}
+
+.modal__options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--color-primary-white);
+}
+
+.modal__title {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.modal__list {
+    margin-top: 12px;
+    list-style-type: none;
+}
+
+.modal__skills {
+    margin-top: 16px;
+}
+
+.modal__list-item {
+    position: relative;
+    left: 22px;
+    line-height: 28px;
+}
+
+.modal__list-item::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    background-color: var(--color-primary-white);
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
 }
 
 @media (pointer: fine) {
