@@ -304,8 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2 class="modal__title title">Дизайн</h2>
                     <p class= "modal__subtitle descr" >Выбирай направление, в котором хочешь развиваться.</p>
                     <div class="modal__tags">
-                        <button class="tag modal__tag" data-modal-tag="design-1">Графический дизайн</button>
-                        <button class="tag modal__tag" data-modal-tag="design-2">UX/UI-дизайн</button>
+                        <button class="tag modal__tag" data-modal-tag="design-2">Графический дизайн</button>
+                        <button class="tag modal__tag" data-modal-tag="design-1">UX/UI-дизайн</button>
                     </div>
                 `
             },
