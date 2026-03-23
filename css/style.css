@@ -559,7 +559,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    /* animation: scroll-left var(--speed-animation) linear infinite;  */
+    animation: scroll-left var(--speed-animation) linear infinite; 
 }
 
 @keyframes scroll-left {
@@ -1035,7 +1035,7 @@ html {
     background: radial-gradient(25.2% 20.86% at 36.69% 38.79%, rgba(207, 65, 239, 0.43) 0%, rgba(132, 74, 255, 0) 100%);
     background: #101010;
     border-radius: 32px;
-    padding: 48px;
+    padding: 40px;
     z-index: 2;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
