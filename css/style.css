@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(--font-primary);
 }
 
 :root {
@@ -12,6 +13,7 @@
     --color-secondary: #212121;
     --color-primary-white: #FFFFFF;
     --color-secondary-white: #FEFFFB;
+    --color-error: #FF6284;
 
     /* Отступы или шрифты тоже можно сюда */
     --font-primary: 'Golos Text', sans-serif;
@@ -23,12 +25,11 @@
 }
 
 body {
-    font-family: var(--font-primary);
     background-color: #101010;
     overflow-x: hidden;
-    /* background-image: url('../img/main_bg_920.png');
+    background-image: url('../img/main_bg_1920.svg');
     background-repeat: no-repeat;
-    background-position: center; */
+    background-position: center top;
 }
 
 html {
@@ -141,15 +142,31 @@ html {
 /* Шапка */
 .header {
     padding: 11px 0;
-    background: #101010;
-    box-shadow: 0px 4px 20px 0px #10101040;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 6;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #101010;
+    background-image: url('../img/header_bg_fixed.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    box-shadow: 0px 4px 20px 0px rgba(16, 16, 16, 0.25);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
 }
 
 .header--fixed {
@@ -159,6 +176,15 @@ html {
 
 .header--visible {
     transform: translateY(0);
+    /* background: #101010;
+    box-shadow: 0px 4px 20px 0px rgba(16, 16, 16, 0.25);
+    background-image: url('../img/header_bg_fixed.svg');
+    background-repeat: no-repeat;
+    background-position: center top; */
+}
+
+.header--visible::before {
+    opacity: 1;
 }
 
 .header__container {
@@ -559,7 +585,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left var(--speed-animation) linear infinite; 
+    /* animation: scroll-left var(--speed-animation) linear infinite;  */
 }
 
 @keyframes scroll-left {
@@ -1032,8 +1058,10 @@ html {
     position: relative;
     width: 100%;
     max-width: 831px;
-    background: radial-gradient(25.2% 20.86% at 36.69% 38.79%, rgba(207, 65, 239, 0.43) 0%, rgba(132, 74, 255, 0) 100%);
-    background: #101010;
+    background-color: #101010;
+    background-image: url('../img/modal_bg_1920.svg');
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 32px;
     padding: 40px;
     z-index: 2;

@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: 'Golos Text';
+    src: url(../fonts/GolosText-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Golos Text';
     src: url(../fonts/GolosText-SemiBold.ttf);
     font-weight: 600;
 }

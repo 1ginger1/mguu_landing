@@ -6,58 +6,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     const backToTop = document.querySelector('.up-button__link');
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
 
-        if (currentScroll < 1) {
-            if (header.classList.contains('header--visible')) {
-                header.classList.remove('header--fixed', 'header--visible');
-            }
-
-            countScroll = 0;
-        }
-
-        if (currentScroll < 100) {
-            if (backToTop.classList.contains('up-button__link--visible')) {
-                backToTop.classList.remove('up-button__link--visible')
-            }
-
-            countScroll = 0;
-        }
-
-        if (upScrollAmount > currentScroll) {
-            upScrollAmount = upScrollAmount - currentScroll;
-            countScroll += upScrollAmount;
-
-            if (countScroll > 600) {
-                header.classList.add('header--fixed', 'header--visible');
-
-                if (backToTop) {
-                    backToTop.classList.add('up-button__link--visible');
-                }
-
-                countScroll = 0;
-            }
-        } else {
-            upScrollAmount = currentScroll - upScrollAmount;
-            countScroll += upScrollAmount;
-
-            if (countScroll > 200) {
-                if (backToTop.classList.contains('up-button__link--visible')) {
-                    backToTop.classList.remove('up-button__link--visible')
-                }
-
+            if (currentScroll < 1) {
                 if (header.classList.contains('header--visible')) {
                     header.classList.remove('header--fixed', 'header--visible');
                 }
 
                 countScroll = 0;
             }
-        }
+
+            if (currentScroll < 100) {
+                if (backToTop.classList.contains('up-button__link--visible')) {
+                    backToTop.classList.remove('up-button__link--visible')
+                }
+
+                countScroll = 0;
+            }
+
+            if (upScrollAmount > currentScroll) {
+                upScrollAmount = upScrollAmount - currentScroll;
+                countScroll += upScrollAmount;
+
+                if (countScroll > 600) {
+                    header.classList.add('header--fixed', 'header--visible');
+
+                    if (backToTop) {
+                        backToTop.classList.add('up-button__link--visible');
+                    }
+
+                    countScroll = 0;
+                }
+            } else {
+                upScrollAmount = currentScroll - upScrollAmount;
+                countScroll += upScrollAmount;
+
+                if (countScroll > 200) {
+                    if (backToTop.classList.contains('up-button__link--visible')) {
+                        backToTop.classList.remove('up-button__link--visible')
+                    }
+
+                    if (header.classList.contains('header--visible')) {
+                        header.classList.remove('header--fixed', 'header--visible');
+                    }
+
+                    countScroll = 0;
+                }
+            }
 
 
-        upScrollAmount = currentScroll;
-    });
+            upScrollAmount = currentScroll;
+        });
+    }
 
     // Карусель блока "Что такое ДИТ"
     const marquee = document.querySelector('.marquee__inner');
@@ -103,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Модально окно 
     const modal = document.querySelector('.modal'),
-        modalOptions = modal.querySelector('.modal__options'),
-        modalIcon = modal.querySelector('.modal__img'),
+        modalOptions = document.querySelector('.modal__options'),
+        modalIcon = document.querySelector('.modal__img'),
         closeBtns = document.querySelectorAll('.js-modal-close'),
         modalData = {
             "test": {
@@ -605,5 +607,143 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('modal--active');
             document.body.style.overflow = '';
         });
+    });
+
+    // Выпадающие списки
+    const selectBtn = document.querySelectorAll('.select__header'),
+        selectList = document.querySelectorAll('.select__dropdown');
+
+    selectBtn.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            if (selectList[i].classList.contains('select__dropdown-active')) {
+                selectList[i].classList.remove('select__dropdown-active');
+                btn.classList.remove('select__header-active');
+            } else {
+                selectList[i].classList.add('select__dropdown-active');
+                btn.classList.add('select__header-active');
+            }
+        });
+    });
+
+    // Загрузка файлов
+    const fileInput = document.querySelector('.file-upload__input'),
+        wrapper = document.querySelector('.file-upload'),
+        fileTitle = document.querySelector('#file_title'),
+        deleteFile = document.querySelector('#delete_file');
+
+    fileInput.addEventListener('change', (event) => {
+        console.log(event.target.files.length)
+        if (event.target.files.length > 0) {
+            fileTitle.textContent = event.target.files[0].name;
+            wrapper.classList.add('file-upload--select');
+        }
+    });
+
+    let fileDel = true;
+
+    wrapper.addEventListener('click', (e) => {
+        if (wrapper.classList.contains('file-upload--select')) {
+            e.preventDefault();
+            return false;
+        } else if (!fileDel) {
+            e.preventDefault();
+            fileDel = true;
+
+            return false;
+        }
+    });
+
+    deleteFile.addEventListener('click', (e) => {
+        fileInput.value = '';
+        wrapper.classList.remove('file-upload--select');
+
+        fileDel = false;
+    });
+
+    // Маска на поле ввода номера телефона
+    const phoneInput = document.getElementById('phone'),
+        RUS_MASK = "+7(___)___-__-__",
+        DEF_MASK = "_(___)___-__-__";
+
+    const applyMask = (val) => {
+        let digits = val.replace(/\D/g, ""),
+            currentMask = DEF_MASK; // По умолчанию свободная
+
+        if (digits.length > 0) {
+            const first = digits[0];
+
+            // Если это РФ (7, 8 или 9)
+            if (first === '7' || first === '8' || first === '9') {
+                currentMask = RUS_MASK;
+                if (first === '7' || first === '8') {
+                    digits = digits.substring(1); // Убираем 7/8, т.к. +7 уже в маске
+                }
+            }
+        }
+
+        let result = "",
+            digitIndex = 0;
+
+        for (let i = 0; i < currentMask.length; i++) {
+            if (currentMask[i] === "_") {
+                if (digitIndex < digits.length) {
+                    result += digits[digitIndex];
+                    digitIndex++;
+                } else {
+                    result += "_";
+                }
+            } else {
+                result += currentMask[i];
+            }
+        }
+        return { result, currentMask };
+    };
+
+    phoneInput.addEventListener('input', (e) => {
+        const { result, currentMask } = applyMask(phoneInput.value);
+
+        phoneInput.value = result;
+
+        const pos = phoneInput.value.indexOf("_");
+        if (pos !== -1) phoneInput.setSelectionRange(pos, pos);
+        const value = phoneInput.value,
+            cursorPos = phoneInput.selectionStart;
+
+        // Если перед курсором дефис или скобка — прыгаем еще на один символ назад
+        if (value[cursorPos - 1] === '-' || value[cursorPos - 1] === ')' || value[cursorPos - 1] === '(') {
+            // Ставим курсор перед спецсимволом
+            phoneInput.setSelectionRange(cursorPos - 1, cursorPos - 1);
+        }
+    });
+
+    phoneInput.addEventListener('focus', () => {
+        if (!phoneInput.value) {
+            phoneInput.value = DEF_MASK;
+            setTimeout(() => phoneInput.setSelectionRange(0, 0), 0);
+        }
+    });
+
+    phoneInput.addEventListener('blur', () => {
+        if (phoneInput.value === DEF_MASK || phoneInput.value === RUS_MASK) {
+            phoneInput.value = "";
+        }
+    });
+
+
+    // Маска на ввод дня рождения
+    const birthdayInput = document.getElementById('birthday'),
+        birthdayMask = "дд.мм.гггг";
+
+    birthdayInput.addEventListener('focus', () => {
+        if (!birthdayInput.value) {
+            birthdayInput.value = birthdayMask;
+            setTimeout(() => phoneInput.setSelectionRange(0, 0), 0);
+        }
+    });
+
+    birthdayInput.addEventListener('blur', () => {
+        if (birthdayInput.value === birthdayMask) {
+            birthdayInput.value = "";
+        }
     });
 });
