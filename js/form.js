@@ -135,9 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let lastLetterIndex = v.search(/[a-zа-я](?![a-zа-я]*[a-zа-я])/i);
-        console.log(lastLetterIndex);
-
         if (v) {
             if (v.length > 0) {
                 if (v.length == 1) {
@@ -159,6 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 valBirthday = valBirthday.replace(valBirthday.substring(6, 10), valYear + yearMask.substring(0, 4 - valYear.length));
             }
+
+            this.value = valBirthday;
+
+
+            let lastLetterIndex = v.search(/[a-zа-я](?![a-zа-я]*[a-zа-я])/i);
+            console.log(lastLetterIndex);
 
             // setTimeout(() => birthdayInput.setSelectionRange(lastDigitIndex, lastDigitIndex), 0);
 
@@ -185,8 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // }
 
         }
-
-        this.value = valBirthday;
     });
 
     birthdayInput.addEventListener('focus', () => {

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 upScrollAmount = upScrollAmount - currentScroll;
                 countScroll += upScrollAmount;
 
-                if (countScroll > 600) {
+                if (countScroll > 900) {
                     header.classList.add('header--fixed', 'header--visible');
 
                     if (backToTop) {
