@@ -135,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let lastDigitIndex = v.search(/\d(?=[^\d]*$)/) + 1;
+        let lastLetterIndex = v.search(/[a-zа-я](?![a-zа-я]*[a-zа-я])/i);
+        console.log(lastLetterIndex);
 
         if (v) {
             if (v.length > 0) {
@@ -151,16 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     valBirthday = valBirthday.replace("м", v.substring(3, 4));
                 }
-
-                // lastDigitIndex++;
             }
             if (v.length > 4) {
                 let yearMask = "гггг",
                     valYear = v.substring(4, v.length);
 
                 valBirthday = valBirthday.replace(valBirthday.substring(6, 10), valYear + yearMask.substring(0, 4 - valYear.length));
-
-                // lastDigitIndex = lastDigitIndex + 2;
             }
 
             // setTimeout(() => birthdayInput.setSelectionRange(lastDigitIndex, lastDigitIndex), 0);

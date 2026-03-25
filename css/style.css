@@ -585,7 +585,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    /* animation: scroll-left var(--speed-animation) linear infinite;  */
+    animation: scroll-left var(--speed-animation) linear infinite; 
 }
 
 @keyframes scroll-left {
