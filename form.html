@@ -26,31 +26,30 @@
                 <!-- Меню -->
                 <nav class="header__menu">
                     <ul class="header__list">
-                        <li class="header__item"><a href="#features" class="header__link link">Об ИТ-стажировке</a></li>
+                        <li class="header__item"><a href="/#features" class="header__link link">Об ИТ-стажировке</a></li>
                         <!-- Пример активной ссылки с модификатором -->
-                        <li class="header__item"><a href="#about-dit" class="header__link link">Что
+                        <li class="header__item"><a href="/#about-dit" class="header__link link">Что
                                 такое ДИТ</a>
                         </li>
-                        <li class="header__item"><a href="#candidates" class="header__link link">Для кого</a></li>
-                        <li class="header__item"><a href="#directions" class="header__link link">Направления</a></li>
-                        <li class="header__item"><a href="#steps" class="header__link link">Этапы</a></li>
-                        <li class="header__item"><a href="#faq" class="header__link link">Частые вопросы</a></li>
+                        <li class="header__item"><a href="/#candidates" class="header__link link">Для кого</a></li>
+                        <li class="header__item"><a href="/#directions" class="header__link link">Направления</a></li>
+                        <li class="header__item"><a href="/#steps" class="header__link link">Этапы</a></li>
+                        <li class="header__item"><a href="/#faq" class="header__link link">Частые вопросы</a></li>
                     </ul>
                 </nav>
-
-                <!-- Кнопка-->
-                <a href="#" class="button button--small">
-                    Подать заявку
-                </a>
             </div>
         </div>
     </header>
 
-    <section class="application">
+    <section class="application" id="top">
+        <img src="img/form_bg_decore1.svg" alt="Декор" class="application__decore application__decore-1">
+        <img src="img/form_bg_decore2.svg" alt="Декор" class="application__decore application__decore-2">
+
         <div class="container">
             <!-- Кнопка назад -->
-            <a href="index.html" class="form__back">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="/" class="form__back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="form__back-icon">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M15.7071 4.29289C15.3166 3.90237 14.6834 3.90237 14.2929 4.29289L7.29289 11.2929C6.90237 11.6834 6.90237 12.3166 7.29289 12.7071L14.2929 19.7071C14.6834 20.0976 15.3166 20.0976 15.7071 19.7071C16.0976 19.3166 16.0976 18.6834 15.7071 18.2929L9.41421 12L15.7071 5.70711C16.0976 5.31658 16.0976 4.68342 15.7071 4.29289Z"
                         fill="white" />
@@ -81,51 +80,57 @@
 
                     <div class="form__grid">
                         <div class="form__field">
-                            <input type="text" class="form__input" placeholder="Отчество или прочерк, если его нет" name="secondname">
+                            <input type="text" class="form__input" placeholder="Отчество или прочерк, если его нет"
+                                name="secondname">
                             <span class="form__error">Укажи отчество</span>
                         </div>
                     </div>
 
                     <div class="form__grid">
                         <div class="form__field">
-                            <input type="text" class="form__input" placeholder="Номер телефона" name="phone" id="phone"> 
+                            <input type="text" class="form__input" placeholder="Номер телефона" name="phone" id="phone">
                             <span class="form__error">Укажи номер телефона</span>
                         </div>
                     </div>
 
                     <div class="form__grid">
                         <div class="form__field">
-                            <input type="text" class="form__input" placeholder="Электронная почта с российским доменом" name="email">
+                            <input type="text" class="form__input" placeholder="Электронная почта с российским доменом"
+                                name="email">
                             <span class="form__error">Укажи email, заканчивающийся на .ru</span>
+                            <span class="form__info">* Укажи email, заканчивающийся на .ru</span>
                         </div>
                     </div>
 
                     <div class="form__grid">
                         <div class="form__field">
-                            <input type="text" class="form__input" placeholder="Дата рождения" name="birthday" id="birthday">
+                            <input type="text" class="form__input" placeholder="Дата рождения" name="birthday"
+                                id="birthday">
                             <span class="form__error">Укажи дату рождения</span>
                         </div>
                     </div>
 
                     <h3 class="form__label title--color-white">Гражданство</h3>
                     <div class="form__radio-group">
-                        <input type="hidden" name="citizen">
+                        <div class="form__radio-btns">
+                            <label class="radio">
+                                <input type="radio" name="citizenship" class="radio__input" value="РФ">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">РФ</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="citizenship" class="radio__input" value="Двойное">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Двойное</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="citizenship" class="radio__input" value="Другое">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Другое</span>
+                            </label>
+                        </div>
 
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">РФ</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Двойное</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Другое</span>
-                        </label>
+                        <span class="form__error">Укажи гражданство</span>
                     </div>
                 </div>
 
@@ -152,64 +157,85 @@
                         <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="college">Среднее специальное</li>
-                                <li class="select__item" data-value="bachelor">Бакалавриат</li>
-                                <li class="select__item" data-value="specialist">Специалитет</li>
-                                <li class="select__item" data-value="master">Магистратура</li>
+                                <li class="select__item" data-value="college" data-input="edu_level">Среднее специальное
+                                </li>
+                                <li class="select__item" data-value="bachelor" data-input="edu_level">Бакалавриат</li>
+                                <li class="select__item" data-value="specialist" data-input="edu_level">Специалитет</li>
+                                <li class="select__item" data-value="master" data-input="edu_level">Магистратура</li>
+                                <li class="select__item" data-value="bachelor" data-input="edu_level">Бакалавриат</li>
+                                <li class="select__item" data-value="specialist" data-input="edu_level">Специалитет</li>
+                                <li class="select__item" data-value="master" data-input="edu_level">Магистратура</li>
                             </ul>
                         </div>
+
+                        <span class="form__error">Укажи уровень образования</span>
                     </div>
 
                     <div class="select">
-                        <!-- Шапка селекта -->
-                        <button type="button" class="select__header form__input">
-                            <span class="select__current">Название учебного заведения</span>
+                        <input type="hidden" name="edu_name" class="select__input-value">
 
-                            <div class="select__arrow">
+                        <div class="select__header form__input">
+                            <!-- Поле для поиска и отображения выбора -->
+                            <input type="text" class="select__search form__input"
+                                placeholder="Название учебного заведения" name="edu_name_search">
+
+                            <div class="select__arrow-search">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289Z"
+                                        d="M4 9.86667C4 6.07431 7.07431 3 10.8667 3C14.659 3 17.7333 6.07431 17.7333 9.86667C17.7333 11.4021 17.2294 12.8199 16.3778 13.9636L21.7071 19.2929C22.0976 19.6834 22.0976 20.3166 21.7071 20.7071C21.3166 21.0976 20.6834 21.0976 20.2929 20.7071L14.9636 15.3778C13.8199 16.2294 12.4021 16.7333 10.8667 16.7333C7.07431 16.7333 4 13.659 4 9.86667ZM10.8667 5C8.17888 5 6 7.17888 6 9.86667C6 12.5545 8.17888 14.7333 10.8667 14.7333C13.5545 14.7333 15.7333 12.5545 15.7333 9.86667C15.7333 7.17888 13.5545 5 10.8667 5Z"
                                         fill="#D7FF72" />
                                 </svg>
                             </div>
-                        </button>
+                        </div>
 
-                        <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="college">Среднее специальное</li>
-                                <li class="select__item" data-value="bachelor">Бакалавриат</li>
-                                <li class="select__item" data-value="specialist">Специалитет</li>
-                                <li class="select__item" data-value="master">Магистратура</li>
+                                <li class="select__item" data-value="college" data-input="edu_name">2-ое Московское
+                                    областное музыкальное училище имени С.С. Прокофьева</li>
+                                <li class="select__item" data-value="bachelor" data-input="edu_name">3-е Московское
+                                    областное музыкальное училище</li>
+                                <li class="select__item" data-value="specialist" data-input="edu_name">Ааграрный колледж
+                                    Мичуринского государственного аграрного университета</li>
+                                <li class="select__item" data-value="master" data-input="edu_name">Абаканский
+                                    медицинский колледж Хакасского государственного университета им. Н.Ф. Катанова</li>
                             </ul>
                         </div>
+
+                        <span class="form__error">Укажи полное название учебного заведения</span>
                     </div>
 
                     <div class="select">
-                        <!-- Шапка селекта -->
-                        <button type="button" class="select__header form__input">
-                            <span class="select__current">Специальность</span>
+                        <input type="hidden" name="specialis" class="select__input-value">
 
-                            <div class="select__arrow">
+                        <div class="select__header form__input">
+                            <!-- Поле для поиска и отображения выбора -->
+                            <input type="text" class="select__search form__input" placeholder="Специальность"
+                                name="specialis_search">
+
+                            <div class="select__arrow-search">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289Z"
+                                        d="M4 9.86667C4 6.07431 7.07431 3 10.8667 3C14.659 3 17.7333 6.07431 17.7333 9.86667C17.7333 11.4021 17.2294 12.8199 16.3778 13.9636L21.7071 19.2929C22.0976 19.6834 22.0976 20.3166 21.7071 20.7071C21.3166 21.0976 20.6834 21.0976 20.2929 20.7071L14.9636 15.3778C13.8199 16.2294 12.4021 16.7333 10.8667 16.7333C7.07431 16.7333 4 13.659 4 9.86667ZM10.8667 5C8.17888 5 6 7.17888 6 9.86667C6 12.5545 8.17888 14.7333 10.8667 14.7333C13.5545 14.7333 15.7333 12.5545 15.7333 9.86667C15.7333 7.17888 13.5545 5 10.8667 5Z"
                                         fill="#D7FF72" />
                                 </svg>
                             </div>
-                        </button>
+                        </div>
 
-                        <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="college">Среднее специальное</li>
-                                <li class="select__item" data-value="bachelor">Бакалавриат</li>
-                                <li class="select__item" data-value="specialist">Специалитет</li>
-                                <li class="select__item" data-value="master">Магистратура</li>
+                                <li class="select__item" data-value="college" data-input="specialis">Авиастроение</li>
+                                <li class="select__item" data-value="bachelor" data-input="specialis">Авиационная и
+                                    космическая медицина</li>
+                                <li class="select__item" data-value="specialist" data-input="specialis">Авиационная и
+                                    ракетно-космическая техника</li>
+                                <li class="select__item" data-value="master" data-input="specialis">Авиационная техника
+                                    и технологии</li>
                             </ul>
                         </div>
+
+                        <span class="form__error">Укажи специальность</span>
                     </div>
 
                     <div class="select">
@@ -231,51 +257,57 @@
                         <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="1">1</li>
-                                <li class="select__item" data-value="2">2</li>
-                                <li class="select__item" data-value="3">3</li>
-                                <li class="select__item" data-value="4">4</li>
+                                <li class="select__item" data-value="1" data-input="edu_course">1</li>
+                                <li class="select__item" data-value="2" data-input="edu_course">2</li>
+                                <li class="select__item" data-value="3" data-input="edu_course">3</li>
+                                <li class="select__item" data-value="4" data-input="edu_course">4</li>
                             </ul>
                         </div>
+
+                        <span class="form__error">Укажи курс</span>
+                        <span class="form__info">* Если обучение окончено, выбирай графу «Выпускник»</span>
                     </div>
 
-                    <label class="file-upload">
-                        <!-- Скрытый реальный инпут -->
-                        <input type="file" class="file-upload__input" id="resume" required>
+                    <div>
+                        <label class="file-upload">
+                            <!-- Скрытый реальный инпут -->
+                            <input type="file" class="file-upload__input" id="resume" required>
 
-                        <!-- Контентная часть -->
-                        <div class="file-upload__content file--no_select">
-                            <span class="file-upload__title">Загрузить резюме</span>
-                            <span class="file-upload__info">до 10 мб</span>
-                        </div>
+                            <div class="file-upload__content file--no_select">
+                                <span class="file-upload__title">Загрузить резюме</span>
+                                <span class="file-upload__info">до 10 мб</span>
+                            </div>
 
-                        <!-- Иконка загрузки (твоя лаймовая) -->
-                        <div class="file-upload__icon file--no_select">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M7.9974 22.667C8.73378 22.667 9.33073 23.2639 9.33073 24.0003V29.3337C9.33073 29.6873 9.4712 30.0264 9.72125 30.2765C9.9713 30.5265 10.3104 30.667 10.6641 30.667H29.3307C29.6843 30.667 30.0235 30.5265 30.2735 30.2765C30.5236 30.0264 30.6641 29.6873 30.6641 29.3337V24.0003C30.6641 23.2639 31.261 22.667 31.9974 22.667C32.7338 22.667 33.3307 23.2639 33.3307 24.0003V29.3337C33.3307 30.3945 32.9093 31.4119 32.1592 32.1621C31.409 32.9122 30.3916 33.3337 29.3307 33.3337H10.6641C9.6032 33.3337 8.58578 32.9122 7.83564 32.1621C7.08549 31.4119 6.66406 30.3945 6.66406 29.3337V24.0003C6.66406 23.2639 7.26102 22.667 7.9974 22.667Z"
-                                    fill="#D7FF72" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.3879 16.3908C12.9086 15.8702 13.7528 15.8702 14.2735 16.3908L19.9974 22.1147L25.7213 16.3908C26.242 15.8702 27.0862 15.8702 27.6069 16.3908C28.1276 16.9115 28.1276 17.7558 27.6069 18.2765L20.9402 24.9431C20.4195 25.4638 19.5753 25.4638 19.0546 24.9431L12.3879 18.2765C11.8672 17.7558 11.8672 16.9115 12.3879 16.3908Z"
-                                    fill="#D7FF72" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M19.9974 6.66699C20.7338 6.66699 21.3307 7.26395 21.3307 8.00033V24.0003C21.3307 24.7367 20.7338 25.3337 19.9974 25.3337C19.261 25.3337 18.6641 24.7367 18.6641 24.0003V8.00033C18.6641 7.26395 19.261 6.66699 19.9974 6.66699Z"
-                                    fill="#D7FF72" />
-                            </svg>
-                        </div>
+                            <div class="file-upload__icon file--no_select">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.9974 22.667C8.73378 22.667 9.33073 23.2639 9.33073 24.0003V29.3337C9.33073 29.6873 9.4712 30.0264 9.72125 30.2765C9.9713 30.5265 10.3104 30.667 10.6641 30.667H29.3307C29.6843 30.667 30.0235 30.5265 30.2735 30.2765C30.5236 30.0264 30.6641 29.6873 30.6641 29.3337V24.0003C30.6641 23.2639 31.261 22.667 31.9974 22.667C32.7338 22.667 33.3307 23.2639 33.3307 24.0003V29.3337C33.3307 30.3945 32.9093 31.4119 32.1592 32.1621C31.409 32.9122 30.3916 33.3337 29.3307 33.3337H10.6641C9.6032 33.3337 8.58578 32.9122 7.83564 32.1621C7.08549 31.4119 6.66406 30.3945 6.66406 29.3337V24.0003C6.66406 23.2639 7.26102 22.667 7.9974 22.667Z"
+                                        fill="#D7FF72" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12.3879 16.3908C12.9086 15.8702 13.7528 15.8702 14.2735 16.3908L19.9974 22.1147L25.7213 16.3908C26.242 15.8702 27.0862 15.8702 27.6069 16.3908C28.1276 16.9115 28.1276 17.7558 27.6069 18.2765L20.9402 24.9431C20.4195 25.4638 19.5753 25.4638 19.0546 24.9431L12.3879 18.2765C11.8672 17.7558 11.8672 16.9115 12.3879 16.3908Z"
+                                        fill="#D7FF72" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.9974 6.66699C20.7338 6.66699 21.3307 7.26395 21.3307 8.00033V24.0003C21.3307 24.7367 20.7338 25.3337 19.9974 25.3337C19.261 25.3337 18.6641 24.7367 18.6641 24.0003V8.00033C18.6641 7.26395 19.261 6.66699 19.9974 6.66699Z"
+                                        fill="#D7FF72" />
+                                </svg>
+                            </div>
 
-                        <span class="file-upload__title file--select" id="file_title"></span>
+                            <span class="file-upload__title file--select" id="file_title"></span>
 
-                        <div class="file-upload__icon file--select" id="delete_file">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22.6934 11.2051H9.28418V25.0322C9.28441 25.5843 9.73204 26.0322 10.2842 26.0322H21.6934C22.2455 26.0322 22.6931 25.5843 22.6934 25.0322V11.2051ZM12.4209 21.8545V15.3828C12.4209 14.8305 12.8686 14.3828 13.4209 14.3828C13.9731 14.3829 14.4209 14.8306 14.4209 15.3828V21.8545C14.4208 22.4066 13.973 22.8544 13.4209 22.8545C12.8687 22.8545 12.421 22.4067 12.4209 21.8545ZM17.5576 21.8545V15.3828C17.5576 14.8305 18.0053 14.3828 18.5576 14.3828C19.1097 14.383 19.5576 14.8306 19.5576 15.3828V21.8545C19.5575 22.4066 19.1097 22.8543 18.5576 22.8545C18.0054 22.8545 17.5577 22.4067 17.5576 21.8545ZM20.126 7.02734C20.126 6.4752 19.6781 6.02757 19.126 6.02734H12.8525C12.3003 6.02734 11.8525 6.47506 11.8525 7.02734V9.20508H20.126V7.02734ZM22.126 9.20508H24.9775L25.0801 9.20996C25.5844 9.2611 25.9775 9.68726 25.9775 10.2051C25.9774 10.7228 25.5843 11.1481 25.0801 11.1992L24.9775 11.2051H24.6934V25.0322C24.6931 26.6889 23.3501 28.0322 21.6934 28.0322H10.2842C8.62747 28.0322 7.28441 26.6889 7.28418 25.0322V11.2051H7C6.44779 11.2051 6.00012 10.7573 6 10.2051C6 9.65279 6.44772 9.20508 7 9.20508H9.85254V7.02734C9.85254 5.37049 11.1957 4.02734 12.8525 4.02734H19.126C20.7826 4.02757 22.126 5.37063 22.126 7.02734V9.20508Z"
-                                    fill="#D7FF72" />
-                            </svg>
-                        </div>
-                    </label>
+                            <div class="file-upload__icon file--select" id="delete_file">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.6934 11.2051H9.28418V25.0322C9.28441 25.5843 9.73204 26.0322 10.2842 26.0322H21.6934C22.2455 26.0322 22.6931 25.5843 22.6934 25.0322V11.2051ZM12.4209 21.8545V15.3828C12.4209 14.8305 12.8686 14.3828 13.4209 14.3828C13.9731 14.3829 14.4209 14.8306 14.4209 15.3828V21.8545C14.4208 22.4066 13.973 22.8544 13.4209 22.8545C12.8687 22.8545 12.421 22.4067 12.4209 21.8545ZM17.5576 21.8545V15.3828C17.5576 14.8305 18.0053 14.3828 18.5576 14.3828C19.1097 14.383 19.5576 14.8306 19.5576 15.3828V21.8545C19.5575 22.4066 19.1097 22.8543 18.5576 22.8545C18.0054 22.8545 17.5577 22.4067 17.5576 21.8545ZM20.126 7.02734C20.126 6.4752 19.6781 6.02757 19.126 6.02734H12.8525C12.3003 6.02734 11.8525 6.47506 11.8525 7.02734V9.20508H20.126V7.02734ZM22.126 9.20508H24.9775L25.0801 9.20996C25.5844 9.2611 25.9775 9.68726 25.9775 10.2051C25.9774 10.7228 25.5843 11.1481 25.0801 11.1992L24.9775 11.2051H24.6934V25.0322C24.6931 26.6889 23.3501 28.0322 21.6934 28.0322H10.2842C8.62747 28.0322 7.28441 26.6889 7.28418 25.0322V11.2051H7C6.44779 11.2051 6.00012 10.7573 6 10.2051C6 9.65279 6.44772 9.20508 7 9.20508H9.85254V7.02734C9.85254 5.37049 11.1957 4.02734 12.8525 4.02734H19.126C20.7826 4.02757 22.126 5.37063 22.126 7.02734V9.20508Z"
+                                        fill="#D7FF72" />
+                                </svg>
+                            </div>
+                        </label>
+                        <span class="form__error" id="file_format">Допустимые форматы файла .pdf .doc .docx .xls .xlsx
+                            .txt</span>
+                        <span class="form__error" id="file_size">Допустимый вес файла 10 мб</span>
+                    </div>
                 </div>
 
                 <!-- Секция 3: Стажировка -->
@@ -283,8 +315,9 @@
 
                 <div class="form__section">
                     <div class="select">
-                        <!-- Шапка селекта -->
-                        <button type="button" class="select__header form__input">
+                        <input type="hidden" name="direction">
+
+                        <button type="button" class="select__header form__input" id="direction">
                             <span class="select__current">Выбери направление стажировки</span>
 
                             <div class="select__arrow">
@@ -300,64 +333,119 @@
                         <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="college">Среднее специальное</li>
-                                <li class="select__item" data-value="bachelor">Бакалавриат</li>
-                                <li class="select__item" data-value="specialist">Специалитет</li>
-                                <li class="select__item" data-value="master">Магистратура</li>
+                                <li class="select__item" data-value="college" data-input="direction">Аналитика данных
+                                </li>
+                                <li class="select__item" data-value="bachelor" data-input="direction">Бизнес анализ</li>
+                                <li class="select__item" data-value="specialist" data-input="direction">Системный анализ
+                                </li>
+                                <li class="select__item" data-value="master" data-input="direction">Поддержка
+                                    пользователей и систем</li>
                             </ul>
                         </div>
+
+                        <span class="form__error">Укажи направление стажировки</span>
                     </div>
 
                     <h3 class="form__label title--color-white">Укажи желаемый график работы</h3>
                     <div class="form__radio-group">
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">20 часов</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">40 часов</span>
-                        </label>
+                        <div class="form__radio-btns">
+                            <label class="radio">
+                                <input type="radio" name="schedule" class="radio__input" value="20">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">20 часов</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="schedule" class="radio__input" value="40">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">40 часов</span>
+                            </label>
+                        </div>
+
+                        <span class="form__error">Укажи желаемый график работы</span>
                     </div>
 
 
                     <h3 class="form__label title--color-white">Готов(а) рассматривать альтернативное направление</h3>
                     <div class="form__radio-group">
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Да</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Нет</span>
-                        </label>
+                        <div class="form__radio-btns">
+                            <label class="radio">
+                                <input type="radio" name="alternative" class="radio__input" value="yes">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Да</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="alternative" class="radio__input" value="no">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Нет</span>
+                            </label>
+                        </div>
+
+                        <span class="form__info">* Если ты не пройдешь на стажировку по выбранному направлению, мы
+                            рассмотрим твою кандидатуру для отбора на альтернативное направление</span>
+                    </div>
+
+                    <div class="select select_alternative">
+                        <input type="hidden" name="direction_choice">
+
+                        <button type="button" class="select__header form__input" id="direction">
+                            <span class="select__current">Выбери альтернативное направление стажировки</span>
+
+                            <div class="select__arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.7071 8.29289C20.0976 8.68342 20.0976 9.31658 19.7071 9.70711L12.7071 16.7071C12.3166 17.0976 11.6834 17.0976 11.2929 16.7071L4.29289 9.70711C3.90237 9.31658 3.90237 8.68342 4.29289 8.29289C4.68342 7.90237 5.31658 7.90237 5.70711 8.29289L12 14.5858L18.2929 8.29289C18.6834 7.90237 19.3166 7.90237 19.7071 8.29289Z"
+                                        fill="#D7FF72" />
+                                </svg>
+                            </div>
+                        </button>
+
+                        <!-- Выпадающий список -->
+                        <div class="select__dropdown">
+                            <ul class="select__list">
+                                <li class="select__item" data-value="college" data-input="direction_choice">Аналитика
+                                    данных
+                                </li>
+                                <li class="select__item" data-value="bachelor" data-input="direction_choice">Бизнес
+                                    анализ</li>
+                                <li class="select__item" data-value="specialist" data-input="direction_choice">Системный
+                                    анализ
+                                </li>
+                                <li class="select__item" data-value="master" data-input="direction_choice">Поддержка
+                                    пользователей и систем</li>
+                            </ul>
+                        </div>
+
+                        <span class="form__error">Укажи альтернативное направление стажировки</span>
                     </div>
 
                     <h3 class="form__label title--color-white">Готов(а) рассматривать стажировку только в удаленном
                         формате</h3>
                     <div class="form__radio-group">
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Да, только удаленно</span>
-                        </label>
-                        <label class="radio">
-                            <input type="radio" name="citizenship" class="radio__input">
-                            <span class="radio__custom"></span>
-                            <span class="radio__text">Могу работать в любом формате</span>
-                        </label>
+                        <div class="form__radio-btns">
+                            <label class="radio">
+                                <input type="radio" name="remote_work" class="radio__input" value="yes">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Да, только удаленно</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="remote_work" class="radio__input" value="no">
+                                <span class="radio__custom"></span>
+                                <span class="radio__text">Могу работать в любом формате</span>
+                            </label>
+                        </div>
+
+                        <span class="form__error">Укажи, готов(а) ли рассмотреть только удаленный формат</span>
+                        <span class="form__info">* На стажировке мало полностью удаленных вакансий. Если по твоему направлению они будут, тогда ты сможешь принять участие в отборе.</span>
                     </div>
                 </div>
 
-                <!-- Секция 3: Финал -->
+                <!-- Секция 4: Финал -->
                 <h3 class="form__section-title title--color-primary">Финал</h3>
                 <div class="form__section">
                     <div class="select">
-                        <!-- Шапка селекта -->
+                        <input type="hidden" name="source">
+
                         <button type="button" class="select__header form__input">
                             <span class="select__current">Поделись, откуда узнал(а) о стажировке «ИТ-город»</span>
 
@@ -374,16 +462,69 @@
                         <!-- Выпадающий список -->
                         <div class="select__dropdown">
                             <ul class="select__list">
-                                <li class="select__item" data-value="college">Среднее специальное</li>
-                                <li class="select__item" data-value="bachelor">Бакалавриат</li>
-                                <li class="select__item" data-value="specialist">Специалитет</li>
-                                <li class="select__item" data-value="master">Магистратура</li>
+                                <li class="select__item" data-value="college" data-input="source">Сайты для поиска
+                                    работы</li>
+                                <li class="select__item" data-value="bachelor" data-input="source">Реклама в социальных
+                                    сетях</li>
+                                <li class="select__item" data-value="specialist" data-input="source">Рассылка и
+                                    социальные сети университета</li>
+                                <li class="select__item" data-value="master" data-input="source">На встрече с
+                                    представителем в вузе</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" class="button form__submit">Отправить заявку</button>
+                <div class="form__agreement">
+                    <div class="form__field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input">
+                            <span class="checkbox__custom"></span>
+                            <span class="checkbox__text">
+                                Соглашаюсь на <a
+                                    href="https://moscowcareer.mguu.ru/upload/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5_%D0%B0%D0%B8%CC%86%D1%82%D0%B8_%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B4%D0%B0%D1%82%D1%8B_%D0%BD%D0%B0_%D1%81%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83.pdf"
+                                    class="checkbox__link">обработку персональных данных</a>
+                            </span>
+                        </label>
+
+                        <span class="form__error">Согласие на обработку данных — обязательное поле*</span>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input">
+                            <span class="checkbox__custom"></span>
+                            <span class="checkbox__text">
+                                Соглашаюсь с условиями <a
+                                    href="https://moscowcareer.mguu.ru/upload/%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D0%9F%D0%94_2023_%D1%81_%D0%98%D0%97%D0%9C_%D0%BF%D1%80%D0%B8%D0%BA%D0%B0%D0%B7_28_03_2023_%E2%84%96_80.pdf"
+                                    class="checkbox__link">политики обработки персональных
+                                    данных</a>
+                            </span>
+                        </label>
+
+                        <span class="form__error">Согласие с условием обработки данных — обязательное поле*</span>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input">
+                            <span class="checkbox__custom"></span>
+                            <span class="checkbox__text">
+                                Согласен получать рассылку от команды стажировки «ИТ-город»
+                            </span>
+                        </label>
+
+                        <span class="form__error">Согласие на получение рассылки от команды стажировки «ИТ-город» —
+                            обязательное поле*</span>
+                    </div>
+                </div>
+
+                <div class="form__btns">
+                    <button type="submit" class="button form__submit">Отправить заявку</button>
+                    <a href="/#directions" class="form__back form__back_direction" target="_blank">
+                        К направлениям
+                    </a>
+                </div>
             </form>
         </div>
     </section>
@@ -469,6 +610,47 @@
         </div>
     </footer>
 
+    <!-- Кнопка вверх -->
+    <div class="up-button">
+        <div class="container up-button__inner">
+            <a href="# " class="up-button__link">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.05459 15.6093C6.53389 15.0886 6.53389 14.2444 7.05459 13.7237L15.0546 5.72369C15.5753 5.20299 16.4195 5.20299 16.9402 5.72369L24.9402 13.7237C25.4609 14.2444 25.4609 15.0886 24.9402 15.6093C24.4195 16.13 23.5753 16.13 23.0546 15.6093L17.3307 9.88545L17.3307 25.3332C17.3307 26.0695 16.7338 26.6665 15.9974 26.6665C15.261 26.6665 14.6641 26.0695 14.6641 25.3332L14.6641 9.88545L8.9402 15.6093C8.41951 16.13 7.57529 16.13 7.05459 15.6093Z"
+                        fill="white" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="modal-analysis">
+        <div class="modal__overlay js-modal-close"></div>
+
+        <div class="modal__content">
+            <!-- Кнопка закрытия -->
+            <button class="modal__close js-modal-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 21L3 3M21.0001 3L3 21.0001" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+
+            <!-- Декоративный стикер -->
+            <div class="modal__sticker">
+                <img alt="Стикер" class="modal__img">
+            </div>
+
+            <!-- Выбор направлений -->
+            <div class="modal__options">
+
+            </div>
+
+            <button class="button modal__button">Подать заявку</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
     <script src="js/form.js"></script>
 </body>
 
