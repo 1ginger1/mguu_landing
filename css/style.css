@@ -218,7 +218,6 @@ html {
 /* Блок ИТ-ГОРОД */
 .hero {
     padding-top: 112px;
-    font-family: var(--font-secondary);
     color: var(--color-primary-white);
 }
 
@@ -243,12 +242,14 @@ html {
     font-size: 100px;
     font-weight: 700;
     line-height: 90%;
+    font-family: var(--font-secondary);
 }
 
 .hero__subtitle {
     font-weight: 500;
     font-size: 40px;
     line-height: 52px;
+    font-family: var(--font-secondary);
 }
 
 .hero__description {
@@ -256,6 +257,7 @@ html {
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
+    font-family: var(--font-secondary);
 }
 
 .hero__image-wrapper {
@@ -280,6 +282,8 @@ html {
     font-size: 34px;
     color: var(--color-primary-green);
     text-align: center;
+    font-weight: 500;
+    font-family: var(--font-secondary);
 }
 
 /* Позиционирование декоратиынйх линий  */
