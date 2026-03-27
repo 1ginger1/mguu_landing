@@ -589,7 +589,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left var(--speed-animation) linear infinite; 
+    animation: scroll-left var(--speed-animation) linear infinite;
 }
 
 @keyframes scroll-left {
@@ -805,6 +805,10 @@ html {
     position: relative;
 }
 
+.faq__title {
+    line-height: 48px;
+}
+
 .faq__question {
     display: flex;
     justify-content: space-between;
@@ -828,17 +832,33 @@ html {
     display: block;
 }
 
+.faq__item.active .faq__question-text {
+    padding: 16px 0;
+    color: var(--color-dark-green);
+}
+
+.faq__item.active .faq__arrow svg path {
+    fill: var(--color-dark-green);
+}
+
+.faq__question-text {
+    line-height: 40px;
+}
+
 .faq__list {
     margin-top: var(--content-wrap-mt);
     max-width: 1186px;
 }
 
 .faq__item {
-    padding: 20px;
+    padding: 20px 20px 19px 20px;
     border-bottom: 1px solid #5B5B5B;
+    transition: 0.1s all;
+    box-sizing: border-box;
 }
 
 .faq__item:first-child {
+    padding: 19px;
     border-top: 1px solid #5B5B5B;
 }
 
@@ -859,8 +879,8 @@ html {
 
 .faq__decor {
     position: absolute;
-    top: 143px;
-    right: -154px;
+    top: 141px;
+    right: -156px;
 }
 
 /* Блок "Хочешь развивать масштабные цифровые проекты столицы? " */
