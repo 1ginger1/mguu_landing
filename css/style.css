@@ -26,7 +26,6 @@
 
 body {
     background-color: #101010;
-    overflow-x: hidden;
     background-image: url('../img/main_bg_1920.svg');
     background-repeat: no-repeat;
     background-position: center top;
@@ -65,7 +64,7 @@ html {
 }
 
 .section {
-    margin-top: 120px;
+    margin-top: var(--section-spacing);
 }
 
 .item {
@@ -139,6 +138,14 @@ html {
     cursor: var(--cursor);
 }
 
+.block--desktop-show {
+    display: block;
+}
+
+.block--tablet-show {
+    display: none;
+}
+
 /* Шапка */
 .header {
     padding: 11px 0;
@@ -195,8 +202,8 @@ html {
 
 .header__logo-group {
     display: flex;
+    align-items: center;
     gap: 32px;
-    align-items: end;
 }
 
 .header__navigation {
@@ -232,6 +239,7 @@ html {
 
 .hero__card {
     border-radius: 24px;
+    overflow: hidden;
 }
 
 .hero__button {
@@ -263,16 +271,19 @@ html {
 .hero__image-wrapper {
     position: relative;
     height: 392px;
-    width: 710px;
-    background: linear-gradient(118.78deg, #9A14F4 2.1%, #212121 96.02%),
-        linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
+    width: 100%;
     border-radius: 20px;
+    background:
+        linear-gradient(118.78deg, #9A14F4 2.1%, #212121 96.02%),
+        linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
 }
 
 .hero__image {
     position: absolute;
-    left: 50%;
+    left: 47%;
     bottom: 0;
+    width: auto;
+    height: 393px;
     transform: translateX(-50%);
     z-index: 2;
 }
@@ -305,7 +316,7 @@ html {
     position: absolute;
     right: -28px;
     top: 24px;
-    z-index: 3;
+    z-index: 1;
 }
 
 .hero__card--visual .hero__decor img:nth-child(2) {
@@ -330,6 +341,13 @@ html {
 }
 
 /* блок Информация */
+.info__stats {
+    background-image: url('../img/stats_decore.svg');
+    background-repeat: no-repeat;
+    /* background-position: right -8px top 20px; */
+    background-position: left calc(50% + 845px) top 20px;
+}
+
 .stats__list {
     position: relative;
     display: flex;
@@ -347,14 +365,13 @@ html {
     line-height: 40px;
 }
 
-.stats__decore {
-    position: absolute;
-    top: 20px;
-    right: -161px;
-    z-index: -1;
+/* Блок Стажировка */
+.features {
+    background-image: url('../img/features_decore.svg');
+    background-repeat: no-repeat;
+    background-position: left calc(50% - 256px) bottom 20px;
 }
 
-/* Блок Стажировка */
 .features__content {
     margin-top: var(--content-wrap-mt);
     display: flex;
@@ -366,13 +383,13 @@ html {
     height: 653px;
     width: 655px;
     background-color: var(--color-secondary);
-    background-image: url('../img/girl2.svg');
+    background-image: url('../img/girl2.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom 0 left 50%;
 }
 
 .features__list {
-    padding: 0;
+    padding: 0 !important;
     background-color: transparent;
 }
 
@@ -426,12 +443,6 @@ html {
     top: -62px;
 }
 
-.features__stat-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
 .features__stat-card:nth-child(1) {
     max-width: 263px;
 }
@@ -481,25 +492,17 @@ html {
     max-width: 231px;
 }
 
-.features__decore {
-    position: absolute;
-    left: -79px;
-    bottom: 20px;
-    z-index: -1;
+/* Блок "Что такое ДИТ" */
+.about-dit {
+    background-image: url('../img/aboute-dit-decore.svg');
+    background-repeat: no-repeat;
+    background-position: top 137px left 50%;
+    padding-bottom: 120px;
 }
 
-/* Блок "Что такое ДИТ" */
 .about-dit__container {
     position: relative;
     padding-bottom: 42px;
-}
-
-.about-dit__decore {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
 }
 
 .about-dit__title {
@@ -540,7 +543,7 @@ html {
 }
 
 .about-dit__footer {
-    margin-top: 32px;
+    margin-top: var(--content-wrap-mt);
 }
 
 .about-dit__partners {
@@ -603,6 +606,10 @@ html {
 }
 
 /* Блок "Кого мы ждем" */
+.candidates {
+    margin-top: 0;
+}
+
 .candidates__title {
     line-height: 48px;
 }
@@ -624,8 +631,7 @@ html {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    /* height: 264px;
-    width: auto; */
+    height: 264px;
 }
 
 .candidates__icon {
@@ -651,12 +657,10 @@ html {
 }
 
 .directions__container {
-    display: flex;
-    justify-content: space-between;
+    background: url('../img/directions-stickers.png') center right / 540px 409px no-repeat;
 }
 
 .directions__content {
-    flex: 1;
     padding: 63px 0;
 }
 
@@ -665,20 +669,31 @@ html {
     gap: 20px;
     flex-wrap: wrap;
     margin-top: var(--content-wrap-mt);
+    max-width: 1100px;
 }
 
 .directions__tag {
-    padding: 12px 16px;
+    padding: 11px 15px;
     border-radius: 40px;
     line-height: 28px;
 }
 
-.directions__stickers {
+/* .directions__stickers {
     height: 409px;
-    flex-shrink: 0;
-}
+} */
+
+/* .directions__visual {
+    background: url('../img/directions-stickers.png') center center / cover no-repeat;
+} */
 
 /* Блок Как попасть на стажировку */
+.steps {
+    background-image: url('../img/steps-decore.svg');
+    background-repeat: no-repeat;
+    /* background-position: bottom 0 right -7px; */
+    background-position: left calc(50% + 642px) bottom 0;
+}
+
 .steps__container {
     position: relative;
 }
@@ -758,6 +773,11 @@ html {
     background: var(--color-primary-white);
 }
 
+.steps__icon {
+    width: 48px;
+    height: 48px;
+}
+
 .steps__number {
     color: var(--color-secondary);
     font-size: 32px;
@@ -790,17 +810,19 @@ html {
     z-index: 1;
 }
 
-.steps__bg {
-    position: absolute;
-    bottom: -3px;
-    right: -161px;
-}
-
 .steps__descr {
     max-width: 360px;
 }
 
 /* Блок часто задаваемые вопросы */
+.faq {
+    background-image: url('../img/faq_bg.svg');
+    background-repeat: no-repeat;
+    /* background-position: top 141px right -7px; */
+    background-position: left calc(50% + 755px) top 141px;
+    padding-bottom: 120px;
+}
+
 .faq__container {
     position: relative;
 }
@@ -832,8 +854,11 @@ html {
     display: block;
 }
 
-.faq__item.active .faq__question-text {
+.faq__item.active .faq__question {
     padding: 16px 0;
+}
+
+.faq__item.active .faq__question-text {
     color: var(--color-dark-green);
 }
 
@@ -877,30 +902,26 @@ html {
     max-width: 901px;
 }
 
-.faq__decor {
-    position: absolute;
-    top: 141px;
-    right: -156px;
+/* Блок "Хочешь развивать масштабные цифровые проекты столицы? " */
+.cta {
+    margin-top: 0;
+    background-image: url('../img/cta-decore.svg');
+    background-repeat: no-repeat;
+    background-position: left calc(50% + 245px) bottom 0;
 }
 
-/* Блок "Хочешь развивать масштабные цифровые проекты столицы? " */
 .cta__container {
     display: flex;
     gap: 75px;
     justify-content: flex-start;
     height: 397px;
+    background: url('../img/cta_bg.png') bottom right 55px / 703px 422px no-repeat;
 }
 
 .cta__content {
     position: relative;
     padding: 75px 0;
     width: 768px;
-}
-
-.cta__decor-line {
-    position: absolute;
-    bottom: 0;
-    left: 330px;
 }
 
 .cta__subtitle {
@@ -913,41 +934,18 @@ html {
     margin-top: 40px;
 }
 
-.cta__visual {
-    position: relative;
-    flex-shrink: 0;
-}
-
-.cta__team-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.cta__team-img {
-    width: 703px;
-}
-
 .cta__title {
     line-height: 50px;
 }
 
 /* Подвал */
 .footer {
-    position: relative;
+    background: url('../img/footer-skyline.svg') top center / auto 333px no-repeat;
 }
 
 .footer__main {
     display: flex;
     gap: 610px;
-}
-
-.footer__decor {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
 }
 
 .footer__text {
@@ -958,6 +956,7 @@ html {
 .footer__social {
     margin-top: 40px;
     display: flex;
+    align-items: center;
     gap: 22px;
 }
 
@@ -1125,6 +1124,7 @@ html {
 }
 
 .modal__tags {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -1149,7 +1149,7 @@ html {
 .modal__options {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -1159,6 +1159,14 @@ html {
 .modal__title {
     font-size: 32px;
     line-height: 40px;
+}
+
+.modal__subtitle {
+    margin-top: 20px;
+}
+
+.modal__section {
+    margin-top: 16px;
 }
 
 .modal__list {
@@ -1263,5 +1271,717 @@ html {
 
     .steps__content--back:hover::before {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1919px) {
+    :root {
+        --section-spacing: 80px;
+        --content-wrap-mt: 24px;
+    }
+
+    body {
+        background-image: url('../img/main_bg_1280.png');
+    }
+
+    .container {
+        max-width: 1084px;
+    }
+
+    .header {
+        padding: 18px 0;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .title--small {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .link {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .descr {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .item {
+        padding: 24px;
+    }
+
+    .block--desktop-show {
+        display: none;
+    }
+
+    .block--tablet-show {
+        display: block;
+    }
+
+    /* Блок ИТ-город */
+    .hero__card {
+        border-radius: 16px;
+    }
+
+    .hero__title {
+        font-size: 80px;
+        line-height: 90px;
+    }
+
+    .hero__subtitle {
+        margin-top: 8px;
+        font-size: 32px;
+        line-height: 120%;
+    }
+
+    .hero__description {
+        font-size: 20px;
+        line-height: 24px;
+        margin-top: 60px;
+    }
+
+    .hero__button {
+        margin-top: 24px;
+    }
+
+    .header__logo-group {
+        height: 35px;
+        gap: 20px;
+    }
+
+    .header__logo {
+        height: 100%;
+    }
+
+    .header__logo:nth-child(2) {
+        height: 27px;
+    }
+
+    .header__list,
+    .header__navigation {
+        gap: 20px;
+    }
+
+    .hero__image-wrapper {
+        height: 311px;
+        background:
+            linear-gradient(118.78deg, #9A14F4 2.1%, #212121 96.02%),
+            linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
+    }
+
+    .hero__image {
+        height: 295px;
+        left: 51%;
+    }
+
+    .hero__image {
+        height: 295px;
+    }
+
+    .hero__card--info .hero__decor img:nth-child(1) {
+        top: 6px;
+    }
+
+    .hero__card--info .hero__decor img:nth-child(2) {
+        bottom: 47px;
+    }
+
+    .hero__card--visual .hero__decor img:nth-child(1) {
+        right: -12px;
+        top: 14px;
+    }
+
+    .hero__card--visual .hero__decor img:nth-child(2) {
+        left: -24px;
+        bottom: 33px;
+    }
+
+    .hero__card--visual .hero__decor img:nth-child(3) {
+        top: 20px;
+        right: -25px;
+    }
+
+    .hero__card--visual .hero__decor img:nth-child(4) {
+        height: 83px;
+        width: 80px;
+        top: 44px;
+        right: 55px;
+    }
+
+    .hero__slogan {
+        margin-top: 35px;
+        font-size: 23px;
+    }
+
+    /* Блок 2 */
+    .info__stats {
+        background-size: 318px 494px;
+        background-position: left calc(50% + 575px) top 10px;
+    }
+
+    .stats__value {
+        margin-top: 16px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    /* Блок Стажировка  */
+    .features {
+        background-image: url('../img/features_decore-1280.svg');
+        background-position: left calc(50% - 188px) top 315px;
+    }
+
+    .features__image-box {
+        background-image: url(../img/girl2-1280.png);
+        width: 440px;
+        height: 482px;
+        background-position: center bottom;
+        border-radius: 16px;
+    }
+
+    .features__item {
+        margin-top: 16px;
+    }
+
+    .features__item-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .features__item-desc {
+        margin-top: 8px;
+        max-width: 625px;
+    }
+
+    .features__item:first-child .features__item-desc {
+        max-width: 550px;
+    }
+
+    /* Блок Приемущества  */
+    .features__stats {
+        margin-top: 90px;
+        padding: 0 24px;
+    }
+
+    .features__stat-value {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .features__stat-label {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .features__stat-icon {
+        height: 78px;
+        width: 78px;
+        top: -36px;
+    }
+
+    .features__stat-card {
+        flex: 0 1 auto;
+    }
+
+    .features__stat-card:nth-child(1) {
+        width: 167px;
+    }
+
+    .features__stat-card:nth-child(2) {
+        width: 225px;
+    }
+
+    .features__stat-card:nth-child(3) {
+        width: 225px;
+    }
+
+    .features__stat-card:nth-child(1) .features__stat-icon {
+        left: 106px;
+    }
+
+    .features__stat-card:nth-child(2) .features__stat-icon {
+        left: 133px;
+    }
+
+    .features__stat-card:nth-child(3) .features__stat-icon {
+        left: 140px;
+    }
+
+
+    .features__stat-card:nth-child(4) .features__stat-icon {
+        left: 193px;
+    }
+
+    /* Блок Что такое ДИТ  */
+    .about-dit {
+        background-image: url('../img/aboute-dit-decore-1280.svg');
+        background-position: top 100px left 50%;
+        padding-bottom: 80px;
+    }
+
+    .about-dit__container {
+        padding-bottom: 0;
+    }
+
+    .about-dit__main {
+        gap: 20px;
+    }
+
+    .about-dit__title {
+        line-height: 48px;
+    }
+
+    .about-dit__highlight {
+        margin-top: 40px;
+    }
+
+    .about-dit__visual {
+        margin-top: 0;
+        max-width: 532px;
+        height: 416px;
+        background: url(../img/dit-room-1280.jpg) center center / cover no-repeat;
+    }
+
+    .marquee__inner {
+        gap: 16px;
+    }
+
+    .partner-chip__icon-box {
+        height: 38px;
+        width: 38px;
+    }
+
+    .partner-chip__icon-box img {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Блок Кого мы ждем  */
+    .candidates__card {
+        padding: 24px 32px;
+        height: 350px;
+    }
+
+    .candidates__person {
+        height: 208px;
+    }
+
+    .candidates__icon {
+        height: 92px;
+        width: 92px;
+    }
+
+    .candidates__icon--left {
+        top: 139px;
+        right: -52px;
+    }
+
+    .candidates__icon--right {
+        top: 191px;
+        right: -39px;
+    }
+
+    /* Блок Направдение стажировки  */
+    .directions__content {
+        padding: 0;
+
+    }
+
+    .directions__container {
+        background: url('../img/directions-stickers-1280.png') center right / auto 100% no-repeat;
+    }
+
+    .directions__tags {
+        max-width: 680px;
+    }
+
+    /* Блок как попасть на стажировку  */
+    .steps {
+        background-image: url(../img/steps-decore-1280.svg);
+        background-size: 554px 174px;
+        background-position: bottom 0 left calc(50% + 442px);
+    }
+
+    .steps__content {
+        border-radius: 16px;
+    }
+
+    .steps__title {
+        line-height: 48px;
+    }
+
+    .steps__item {
+        height: 220px;
+        border-radius: 16px;
+    }
+
+    .steps__number {
+        height: 34px;
+        width: 34px;
+    }
+
+    .steps__number {
+        font-size: 22px;
+    }
+
+    .steps__icon {
+        bottom: 24px;
+        right: 24px;
+    }
+
+    .steps__content {
+        padding: 24px;
+    }
+
+    /* Блок Часто задаваемые вопросы */
+    .faq {
+        background: none;
+    }
+
+    .faq__list {
+        max-width: 100%;
+    }
+
+    .faq__item:first-child {
+        padding: 15px 20px;
+    }
+
+    .faq__item {
+        padding: 16px 20px 15px 20px;
+    }
+
+    /* Блок Приходи в нашу команду */
+    .cta {
+        background-image: url(../img/cta-decore-1280.svg);
+        background-position: bottom 7px left calc(50% + 183px);
+    }
+
+    .cta__container {
+        height: 295px;
+        gap: 112px;
+        background: url('../img/cta_bg-1280.png') bottom 8px right 10px / 429px 287px no-repeat;
+    }
+
+    .cta__content {
+        padding: 24px 0 0 0;
+        width: 532px;
+    }
+
+    .cta__decor-line {
+        bottom: 8px;
+    }
+
+    .cta__title {
+        line-height: 48px;
+    }
+
+    .cta__subtitle {
+        margin-top: 14px;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .cta__button {
+        padding: 16px 37px;
+        margin-top: 32px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    /* Подвал */
+    .footer {
+        background-size: auto 240px;
+        background-image: url('../img/footer-skyline-1280.svg');
+    }
+
+    .footer__main {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .footer__decor {
+        height: 240px;
+    }
+
+    .footer__contacts {
+        padding-top: 31px;
+    }
+
+    .footer__logos {
+        gap: 20px;
+        height: 32px;
+    }
+
+    .footer__logo:nth-child(1) {
+        height: 32px;
+    }
+
+    .footer__logo:nth-child(2) {
+        height: 27px;
+    }
+
+    .footer__info {
+        padding-top: 70px;
+        max-width: 348px;
+    }
+
+    .footer__info .footer__text {
+        margin-top: 0;
+    }
+
+    .footer__social {
+        margin-top: 32px;
+    }
+
+    .footer__social-link {
+        max-height: 40px;
+    }
+
+    .footer__bottom {
+        margin: 48px 0 32px 0;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .footer__legal-link {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    /* Моадльное окно */
+    .modal__content {
+        padding: 32px;
+    }
+
+    .modal__title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .modal__options .descr,
+    .modal__options {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .modal__list-item {
+        line-height: 24px;
+    }
+
+    .modal__button {
+        padding: 13px 19px;
+        font-size: 14px;
+        line-height: 14px;
+        margin-top: 20px;
+    }
+
+    .modal__section {
+        margin-top: 8px;
+    }
+
+    .modal__skills {
+        margin-top: 8px;
+    }
+
+    .modal__list-item::before {
+        width: 3px;
+        height: 3px;
+        top: 9px;
+        left: -15px;
+    }
+}
+
+@media (max-width: 1279px) {
+    :root {
+        --section-spacing: 60px;
+    }
+
+    .container {
+        max-width: 320px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .block--tablet-show {
+        display: none;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+    /* Блок ИТ-город */
+    .hero__container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero__card {
+        padding: 20px;
+    }
+
+    .hero__card:nth-child(1) {
+        border-radius: 16px 16px 0 0;
+    }
+
+    .hero__card:nth-child(2) {
+        padding: 12px 0 20px 0;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .hero__title {
+        font-size: 56px;
+        line-height: 120%;
+    }
+
+    .hero__subtitle {
+        margin-top: 12px;
+        font-size: 24px;
+        line-height: 120%;
+        max-width: 198px;
+    }
+
+    .hero__description {
+        margin-top: 56px;
+    }
+
+    .hero__button {
+        margin-top: 32px;
+    }
+
+    .hero__image-wrapper {
+        margin: 0 auto;
+        width: calc(100% - 28px);
+        height: 257px;
+    }
+
+    .hero__image {
+        height: 100%;
+    }
+
+    .hero__slogan {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    /* Блок информации */
+    .stats__list {
+        flex-direction: column;
+    }
+
+    /* Блок Стажировка это */
+    .features {
+        background: none;
+    }
+
+    .features__content {
+        flex-direction: column;
+    }
+
+    .features__image-box {
+        background-image: url(../img/girl2-360.png);
+        background-size: auto 100%;
+        width: 100%;
+        height: 320px;
+    }
+
+    .features__list {
+        gap: 16px;
+    }
+
+    .features__item {
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    /* Блок Приемущества  */
+    .features__stats {
+        padding: 0;
+        gap: 24px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+    .features__stat-card:nth-child(1),
+    .features__stat-card:nth-child(2),
+    .features__stat-card:nth-child(3),
+    .features__stat-card:nth-child(4) {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .features__stat-icon {
+        top: 12px;
+        height: 64px;
+        width: 64px;
+    }
+
+    .features__stat-card:nth-child(1) .features__stat-icon,
+    .features__stat-card:nth-child(2) .features__stat-icon,
+    .features__stat-card:nth-child(3) .features__stat-icon,
+    .features__stat-card:nth-child(4) .features__stat-icon {
+        left: 0;
+    }
+
+    .features__stat-label {
+        margin-top: 4px;
+    }
+
+    .features__stat-value {
+        font-size: 32px;
+        line-height: 40px;
+        margin-left: 80px;
+    }
+
+    .features__stat-label {
+        margin-left: 80px;
+    }
+
+    .features__button {
+        margin-top: 40px;
+    }
+
+    /* Блок что такое ДИТ */
+    .about-dit {
+        background: none;
+    }
+
+    .about-dit__main {
+        flex-direction: column;
+    }
+
+    .about-dit__visual {
+        max-width: 100%;
+        height: 197px;
+    }
+
+    /* Блок Кого мы ждем  */
+    .candidates__list {
+        flex-direction: column;
+    }
+
+    .candidates__card {
+        padding: 16px;
+        height: 308px;
+        flex: 0 1 auto;
+    }
+
+    .candidates__title {
+        line-height: 120%;
     }
 }
