@@ -16,7 +16,7 @@
     --color-error: #FF6284;
 
     /* Отступы или шрифты тоже можно сюда */
-    --font-primary: 'Golos Text', sans-serif;
+    --font-primary: 'Golos', sans-serif;
     --font-secondary: 'GT Walsheim Pro', sans-serif;
     --section-spacing: 120px;
     --content-wrap-mt: 32px;
@@ -81,6 +81,7 @@ html {
     color: var(--color-primary-white);
     font-size: 48px;
     line-height: 120%;
+    letter-spacing: 0.2px;
 }
 
 .title--color-white {
@@ -146,6 +147,14 @@ html {
     display: none;
 }
 
+block--mobail-show {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
 /* Шапка */
 .header {
     padding: 11px 0;
@@ -202,14 +211,18 @@ html {
 
 .header__logo-group {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 32px;
+}
+
+.header__logo:nth-child(2) {
+    padding-bottom: 3px;
 }
 
 .header__navigation {
     align-items: center;
     display: flex;
-    gap: 40px;
+    gap: 43px;
 }
 
 .header__list {
@@ -254,9 +267,11 @@ html {
 }
 
 .hero__subtitle {
+    margin-top: 9px;
+    letter-spacing: 0.1px;
     font-weight: 500;
     font-size: 40px;
-    line-height: 52px;
+    line-height: 120%;
     font-family: var(--font-secondary);
 }
 
@@ -278,14 +293,17 @@ html {
         linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
 }
 
-.hero__image {
+.hero__block-img {
     position: absolute;
-    left: 47%;
-    bottom: 0;
-    width: auto;
     height: 393px;
-    transform: translateX(-50%);
+    width: 593px;
+    bottom: 0;
+    left: 57px;
     z-index: 2;
+}
+
+.hero__image {
+    height: 100%;
 }
 
 .hero__slogan {
@@ -492,21 +510,18 @@ html {
     max-width: 231px;
 }
 
-/* Блок "Что такое ДИТ" */
+/* Блок "Что такое ДИТ" */
 .about-dit {
+    /* position: relative; */
     background-image: url('../img/aboute-dit-decore.svg');
     background-repeat: no-repeat;
     background-position: top 137px left 50%;
-    padding-bottom: 120px;
+    padding-bottom: 160px;
 }
 
 .about-dit__container {
     position: relative;
-    padding-bottom: 42px;
-}
-
-.about-dit__title {
-    line-height: 46px;
+    padding-bottom: 32px;
 }
 
 .about-dit__main {
@@ -516,11 +531,12 @@ html {
 }
 
 .about-dit__description {
-    margin-top: var(--content-wrap-mt);
+    margin-top: 22px;
 }
 
 .about-dit__highlight {
     margin-top: 80px;
+    letter-spacing: 0.1px;
 }
 
 .about-dit__text {
@@ -563,12 +579,17 @@ html {
     border-radius: 46px;
     flex-shrink: 0;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     box-shadow:
         inset -0.75px -0.5px rgba(255, 255, 255, 0.1),
         inset +0.75px +0.5px rgba(255, 255, 255, 0.025),
         3px 2px 10px rgba(0, 0, 0, 0.25),
         inset 0px 0px 10px 5px rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+.marquee-wrapper {
+    overflow: hidden;
 }
 
 .partner-chip__name {
@@ -592,7 +613,7 @@ html {
     gap: 24px;
     padding-right: 24px;
     width: max-content;
-    animation: scroll-left var(--speed-animation) linear infinite;
+    /* animation: scroll-left var(--speed-animation) linear infinite; */
 }
 
 @keyframes scroll-left {
@@ -610,10 +631,6 @@ html {
     margin-top: 0;
 }
 
-.candidates__title {
-    line-height: 48px;
-}
-
 .candidates__list {
     margin-top: var(--content-wrap-mt);
     display: flex;
@@ -626,12 +643,19 @@ html {
     height: 419px;
 }
 
-.candidates__person {
+.candidates__block-person {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     height: 264px;
+    width: 390px;
+}
+
+.candidates__person {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .candidates__icon {
@@ -652,30 +676,26 @@ html {
 }
 
 /* Блок Выбери направление стажировки */
-.directions__title {
-    line-height: 48px;
-}
-
 .directions__container {
     background: url('../img/directions-stickers.png') center right / 540px 409px no-repeat;
 }
 
 .directions__content {
-    padding: 63px 0;
+    padding: 64px 0;
 }
 
 .directions__tags {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: var(--content-wrap-mt);
+    margin-top: 22px;
     max-width: 1100px;
 }
 
 .directions__tag {
     padding: 11px 15px;
     border-radius: 40px;
-    line-height: 28px;
+    line-height: 30px;
 }
 
 /* .directions__stickers {
@@ -686,20 +706,11 @@ html {
     background: url('../img/directions-stickers.png') center center / cover no-repeat;
 } */
 
-/* Блок Как попасть на стажировку */
+/* Блок Как попасть на стажировку */
 .steps {
     background-image: url('../img/steps-decore.svg');
     background-repeat: no-repeat;
-    /* background-position: bottom 0 right -7px; */
-    background-position: left calc(50% + 642px) bottom 0;
-}
-
-.steps__container {
-    position: relative;
-}
-
-.steps__title {
-    line-height: 42px;
+    background-position: left calc(50% + 642px) bottom 20px;
 }
 
 .steps__list {
@@ -774,8 +785,8 @@ html {
 }
 
 .steps__icon {
-    width: 48px;
-    height: 48px;
+    width: 48px !important;
+    height: 48px !important;
 }
 
 .steps__number {
@@ -819,16 +830,12 @@ html {
     background-image: url('../img/faq_bg.svg');
     background-repeat: no-repeat;
     /* background-position: top 141px right -7px; */
-    background-position: left calc(50% + 755px) top 141px;
+    background-position: left calc(50% + 757px) top 119px;
     padding-bottom: 120px;
 }
 
 .faq__container {
     position: relative;
-}
-
-.faq__title {
-    line-height: 48px;
 }
 
 .faq__question {
@@ -868,6 +875,7 @@ html {
 
 .faq__question-text {
     line-height: 40px;
+    letter-spacing: 0.1px;
 }
 
 .faq__list {
@@ -907,35 +915,32 @@ html {
     margin-top: 0;
     background-image: url('../img/cta-decore.svg');
     background-repeat: no-repeat;
-    background-position: left calc(50% + 245px) bottom 0;
+    background-position: left calc(50% + 245px) bottom 1px;
 }
 
 .cta__container {
-    display: flex;
-    gap: 75px;
-    justify-content: flex-start;
-    height: 397px;
-    background: url('../img/cta_bg.png') bottom right 55px / 703px 422px no-repeat;
+    /* display: flex; */
+    /* gap: 75px; */
+    /* justify-content: flex-start; */
+    /* height: 397px; */
+    background: url('../img/cta_bg.png') bottom 2px right 52px / 703px 422px no-repeat;
 }
 
 .cta__content {
     position: relative;
-    padding: 75px 0;
+    padding: 65px 0;
     width: 768px;
 }
 
 .cta__subtitle {
     margin-top: 16px;
     font-size: 32px;
-    line-height: 36px;
+    line-height: 40px;
+    letter-spacing: 0.14px;
 }
 
 .cta__button {
     margin-top: 40px;
-}
-
-.cta__title {
-    line-height: 50px;
 }
 
 /* Подвал */
@@ -945,7 +950,7 @@ html {
 
 .footer__main {
     display: flex;
-    gap: 610px;
+    gap: 608px;
 }
 
 .footer__text {
@@ -958,10 +963,6 @@ html {
     display: flex;
     align-items: center;
     gap: 22px;
-}
-
-.footer__title {
-    line-height: 48px;
 }
 
 .footer__logos {
@@ -1374,10 +1375,16 @@ html {
             linear-gradient(129.67deg, #7514F4 3.31%, rgba(154, 20, 244, 0.78) 49.96%, #212121 116.32%);
     }
 
-    .hero__image {
+    .hero__block-img {
+        width: 411px;
+        height: 295px;
+        left: 41px;
+    }
+
+    /* .hero__image {
         height: 295px;
         left: 51%;
-    }
+    } */
 
     .hero__image {
         height: 295px;
@@ -1521,7 +1528,6 @@ html {
     .about-dit {
         background-image: url('../img/aboute-dit-decore-1280.svg');
         background-position: top 100px left 50%;
-        padding-bottom: 80px;
     }
 
     .about-dit__container {
@@ -1586,6 +1592,11 @@ html {
         right: -39px;
     }
 
+    .candidates__block-person {
+        height: 208px;
+        width: 308px;
+    }
+
     /* Блок Направдение стажировки  */
     .directions__content {
         padding: 0;
@@ -1634,10 +1645,6 @@ html {
         right: 24px;
     }
 
-    .steps__content {
-        padding: 24px;
-    }
-
     /* Блок Часто задаваемые вопросы */
     .faq {
         background: none;
@@ -1662,13 +1669,13 @@ html {
     }
 
     .cta__container {
-        height: 295px;
-        gap: 112px;
+        /* height: 295px;
+        gap: 112px; */
         background: url('../img/cta_bg-1280.png') bottom 8px right 10px / 429px 287px no-repeat;
     }
 
     .cta__content {
-        padding: 24px 0 0 0;
+        padding: 24px 0 38px 0;
         width: 532px;
     }
 
@@ -1681,7 +1688,7 @@ html {
     }
 
     .cta__subtitle {
-        margin-top: 14px;
+        margin-top: 12px;
         font-size: 28px;
         line-height: 36px;
     }
@@ -1803,6 +1810,10 @@ html {
         --section-spacing: 60px;
     }
 
+    body {
+        background-image: url('../img/main_bg_360.svg');
+    }
+
     .container {
         max-width: 320px;
     }
@@ -1820,11 +1831,47 @@ html {
         display: none;
     }
 
+    block--mobail-show {
+        display: block;
+    }
+
+    /* Блок Шапка */
     .header__navigation {
         display: none;
     }
 
+    .header {
+        padding: 20px;
+    }
+
+    .header__logo-group {
+        height: 39px;
+        gap: 24px;
+    }
+
+    .header__logo:nth-child(2) {
+        height: 32px;
+    }
+
+    .menu-toggle {
+        display: block;
+        height: 24px;
+        width: 24px;
+    }
+
+    .menu-toggle.menu-toggle--active {
+        background: url('../img/mob-menu.svg') center center / cover no-repeat;
+    }
+
+    .menu-toggle.menu-toggle--close {
+        background: url('../img/mob-menu-close.svg') center center / cover no-repeat;
+    }
+
     /* Блок ИТ-город */
+    .hero {
+        padding-top: 84px;
+    }
+
     .hero__container {
         flex-direction: column;
         gap: 0;
@@ -1880,6 +1927,10 @@ html {
     }
 
     /* Блок информации */
+    .info__stats {
+        background: none;
+    }
+
     .stats__list {
         flex-direction: column;
     }
@@ -1983,5 +2034,120 @@ html {
 
     .candidates__title {
         line-height: 120%;
+    }
+
+    .candidates__person {
+        height: 188px;
+    }
+
+    .candidates__icon {
+        height: 80px;
+        width: 80px;
+    }
+
+    .candidates__icon--left,
+    .candidates__icon--right {
+        top: 262px;
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Блок направления */
+    .directions__container {
+        background: none;
+    }
+
+    .directions__title {
+        line-height: 120%;
+    }
+
+    .directions__tags {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .directions__tag {
+        padding: 11px 16px;
+        text-align: left;
+    }
+
+    /* Блок как попасть на стажировку */
+    .steps {
+        background: none;
+    }
+
+    .steps__title {
+        line-height: 120%;
+    }
+
+    .steps__item {
+        flex: 1 1 100%;
+        height: 200px;
+        padding: 16px;
+    }
+
+    .steps__text {
+        max-width: 168px;
+    }
+
+    .steps__item:last-child .steps__text {
+        max-width: 100%;
+    }
+
+    /* Блок часто задаваемые вопросы */
+    .faq {
+        padding-bottom: 60px;
+    }
+
+    .faq__question {
+        gap: 16px;
+    }
+
+    .faq__title {
+        line-height: 120%;
+    }
+
+    .faq__question-text {
+        text-align: left;
+        max-width: 224px;
+    }
+
+    /* Блок подать заявку */
+    .cta {
+        background: none;
+    }
+
+    .cta__title {
+        line-height: 120%;
+    }
+
+    .cta__container {
+        background: none;
+    }
+
+    .cta__content {
+        width: 100%;
+    }
+
+    .cta__subtitle {
+        margin-top: 12px;
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    .cta__button {
+        padding: 19px 0;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    /* Блок Подвал */
+    .footer {
+        background: none;
+    }
+
+    .footer__main {
+        flex-direction: column;
     }
 }

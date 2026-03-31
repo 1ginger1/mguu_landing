@@ -20,6 +20,9 @@
                 <img src="img/dit-logo.svg" alt="ДИТ" class="header__logo">
             </div>
 
+            <div class="menu-toggle menu-toggle--active">
+            </div>
+
             <!-- Навигация -->
             <div class="header__navigation">
                 <!-- Меню -->
@@ -64,7 +67,7 @@
                     <img src="img/hero_line_1_2.svg" alt="Декор">
                 </div>
 
-                  <div class="hero__decor block--tablet-show">
+                <div class="hero__decor block--tablet-show">
                     <img src="img/hero_line_1_1-1280.svg" alt="Декор">
                     <img src="img/hero_line_1_2-1280.svg" alt="Декор">
                 </div>
@@ -73,7 +76,9 @@
             <!-- Правая карточка (Визуал) -->
             <article class="hero__card hero__card--visual item">
                 <div class="hero__image-wrapper">
-                    <img src="img/girl.png" alt="Стажер" class="hero__image">
+                    <div class="hero__block-img">
+                        <img src="img/girl.png" alt="Стажер" class="hero__image">
+                    </div>
 
                     <!-- Декоративные элементы -->
                     <div class="hero__decor block--desktop-show">
@@ -154,7 +159,7 @@
                             <div class="features__item-text">
                                 <h3 class="features__item-title title--color-white">удобный формат работы</h3>
                                 <p class="features__item-desc descr">Выбери график: 20 или 40 часов в неделю, работай в
-                                    офисе или в гибридном формате</p>
+                                    офисе или в гибридном формате</p>
                             </div>
                         </div>
 
@@ -169,7 +174,7 @@
                             <div class="features__item-text">
                                 <h3 class="features__item-title title--color-white">карьерные возможности</h3>
                                 <p class="features__item-desc descr">Прояви себя и получи постоянную работу
-                                    в Департаменте
+                                    в Департаменте
                                     информационных технологий города Москвы после стажировки</p>
                             </div>
                         </div>
@@ -186,7 +191,7 @@
                                 <h3 class="features__item-title title--color-white">поддержка и развитие</h3>
                                 <p class="features__item-desc descr">Пройди индивидуальную программу адаптации при
                                     поддержке
-                                    опытного наставника, приобрети уникальные знания и собери сильное портфолио</p>
+                                    опытного наставника, приобрети уникальные знания и собери сильное портфолио</p>
                             </div>
                         </div>
 
@@ -200,9 +205,9 @@
 
                             <div class="features__item-text title--color-white">
                                 <h3 class="features__item-title">надежность и прозрачность</h3>
-                                <p class="features__item-desc descr">Получи официальное трудоустройство, стаж с первого
+                                <p class="features__item-desc descr">Получи официальное трудоустройство, стаж с первого
                                     дня
-                                    работы и выплаты 2 раза в месяц</p>
+                                    работы и выплаты 2 раза в месяц</p>
                             </div>
                         </div>
                     </div>
@@ -254,16 +259,16 @@
                     <div class="about-dit__description">
                         <p class="descr about-dit__text">
                             <span class="descr--green">Департамент информационных технологий столицы</span> вместе
-                            со всеми городскими ведомствами создает
-                            и развивает цифровые проекты, которые <span class="descr--green">делают Москву комфортнее,
-                                а жизнь горожан — удобнее
-                                и мобильнее.</span>
+                            со всеми городскими ведомствами создает
+                            и развивает цифровые проекты, которые <span class="descr--green">делают Москву комфортнее,
+                                а жизнь горожан — удобнее
+                                и мобильнее.</span>
                         </p>
                         <p class="descr about-dit__text">
-                            Для системы управления столицей технологии — это незаменимый инструмент, который применяется
-                            во всех отраслях экономики, городского хозяйства и социальной сферы. А для миллионов
-                            горожан — повседневный помощник, который позволяет получать сотни услуг и сервисов в удобном
-                            цифровом формате в режиме 24/7/365.
+                            Для системы управления столицей технологии — это незаменимый инструмент, который применяется
+                            во всех отраслях экономики, городского хозяйства и социальной сферы. А для миллионов
+                            горожан — повседневный помощник, который позволяет получать сотни услуг и сервисов в удобном
+                            цифровом формате в режиме 24/7/365.
                         </p>
                     </div>
 
@@ -276,86 +281,82 @@
                 <div class="about-dit__visual">
                 </div>
             </div>
+        </div>
 
-            <!-- Нижняя часть: Список партнеров -->
-            <div class="about-dit__footer">
-                <div class="about-dit__partners">
-                    <div class="marquee__inner">
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Узнай Москву</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo1.svg" alt="Узнай Москву" class="partner-chip__icon">
-                            </div>
-                        </div>
+        <div class="marquee-wrapper container">
+            <div class="marquee__inner">
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Узнай Москву</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo1.svg" alt="Узнай Москву" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Портал поставщиков</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo2.svg" alt="Портал поставщиков" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Портал поставщиков</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo2.svg" alt="Портал поставщиков" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">ЕМИАС</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo3.svg" alt="ЕМИАС" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">ЕМИАС</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo3.svg" alt="ЕМИАС" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Активный гражданин</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo4.svg" alt="Активный гражданин" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Активный гражданин</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo4.svg" alt="Активный гражданин" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Портал mos.ru</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo5.svg" alt="Портал mos.ru" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Портал mos.ru</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo5.svg" alt="Портал mos.ru" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Московская электронная школа</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo6.svg" alt="Московская электронная школа"
-                                    class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Московская электронная школа</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo6.svg" alt="Московская электронная школа" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">RussPass</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo7.svg" alt="RussPass" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">RussPass</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo7.svg" alt="RussPass" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Наш город</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo8.svg" alt="Наш город" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Наш город</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo8.svg" alt="Наш город" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Электронный дом</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo9.svg" alt="Электронный дом" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Электронный дом</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo9.svg" alt="Электронный дом" class="partner-chip__icon">
+                    </div>
+                </div>
 
-                        <div class="partner-chip">
-                            <span class="partner-chip__name descr">Цифровой двойник города</span>
-                            <div class="partner-chip__icon-box">
-                                <img src="img/um-logo10.svg" alt="Цифровой двойник города" class="partner-chip__icon">
-                            </div>
-                        </div>
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Цифровой двойник города</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo10.svg" alt="Цифровой двойник города" class="partner-chip__icon">
                     </div>
                 </div>
             </div>
-
         </div>
+
     </section>
 
     <section class="candidates section">
@@ -365,31 +366,47 @@
             <div class="candidates__list">
                 <!-- Карточка 1 -->
                 <article class="candidates__card item">
-                    <p class="candidates__text descr">
+                    <p class="candidates__text descr block--desktop-show">
                         <span class="descr--green">Молодых специалистов до 35 лет</span>, которые хотят развивать
                         масштабные цифровые проекты и менять столицу к лучшему
                     </p>
-                    <img src="img/person1.png" alt="Специалист" class="candidates__person">
+
+                    <p class="candidates__text descr block--tablet-show">
+                        <span class="descr--green">Молодых специалистов до 35 лет</span>, которые хотят развивать
+                        масштабные цифровые проекты <br> и менять столицу к лучшему
+                    </p>
+
+                    <div class="candidates__block-person">
+                        <img src="img/person1.png" alt="Специалист" class="candidates__person">
+                    </div>
                     <img src="img/icon-3d-1.svg" alt="" class="candidates__icon candidates__icon--left">
                 </article>
 
                 <!-- Карточка 2 -->
                 <article class="candidates__card item">
                     <p class="candidates__text descr">
-                        <span class="descr--green">Студентов последних курсов и выпускников вузов</span>, которые
+                        <span class="descr--green">Студентов последних курсов <br> и выпускников вузов</span>, которые
                         хотят начать карьеру в ИТ-команде Москвы
                     </p>
-                    <img src="img/person2.png" alt="Студент вуза" class="candidates__person">
+                    <div class="candidates__block-person">
+                        <img src="img/person2.png" alt="Студент вуза" class="candidates__person">
+                    </div>
                     <img src="img/icon-3d-2.svg" alt="" class="candidates__icon candidates__icon--right">
                 </article>
 
                 <!-- Карточка 3 -->
                 <article class="candidates__card item">
-                    <p class="candidates__text descr">
-                        <span class="descr--green">Студентов последних курсов и выпускников колледжей</span> по
+                    <p class="candidates__text descr block--desktop-show">
+                        <span class="descr--green">Студентов последних курсов <br> и выпускников колледжей</span> по
                         направлению «Поддержка пользователей»
                     </p>
-                    <img src="img/person3.png" alt="Студент колледжа" class="candidates__person">
+
+                    <p class="candidates__text descr block--tablet-show">
+                        <span class="descr--green">Студентов последних курсов <br> и выпускников колледжей</span><br>по направлению «Поддержка пользователей»
+                    </p>
+                    <div class="candidates__block-person">
+                        <img src="img/person3.png" alt="Студент колледжа" class="candidates__person">
+                    </div>
                 </article>
             </div>
         </div>
@@ -498,8 +515,8 @@
 
                     <div class="steps__content steps__content--back">
                         <p class="steps__descr descr">
-                            Реши профильное задание и продемонстрируй свои знания и навыки. Этот этап проходит онлайн
-                            или очно — формат зависит от выбранного направления
+                            Реши профильное задание и продемонстрируй свои знания и навыки. Этот этап проходит онлайн
+                            или очно — формат зависит от выбранного направления
                         </p>
                         <div class="steps__icon button steps__icon--back js-flip-trigger">
                             <img src="img/arrow-down-right.svg" alt="">
@@ -510,8 +527,8 @@
                 <article class="steps__item">
                     <div class="steps__content steps__content--front item">
                         <div class="steps__number title--color-white">4</div>
-                        <p class="steps__text title--color-white title--small">Познакомься<br>с руководителем <span
-                                class="steps__date title--color-primary">до 20 июля</span>
+                        <p class="steps__text title--color-white title--small">Познакомься<br>с руководителем <span
+                                class="steps__date title--color-primary">до 20 июля</span>
                         </p>
                         <div class="steps__icon button js-flip-trigger">
                             <img src="img/arrow-down-right.svg" alt="">
@@ -524,8 +541,8 @@
 
                     <div class="steps__content steps__content--back">
                         <p class="steps__descr descr">
-                            Пообщайся с несколькими наставниками — узнай, какие задачи ждут стажеров в их командах.
-                            На этом этапе ты поймешь, в какой проект сможешь попасть
+                            Пообщайся с несколькими наставниками — узнай, какие задачи ждут стажеров в их командах.
+                            На этом этапе ты поймешь, в какой проект сможешь попасть
                         </p>
                         <div class="steps__icon button steps__icon--back js-flip-trigger">
                             <img src="img/arrow-down-right.svg" alt="">
@@ -536,7 +553,7 @@
                 <article class="steps__item">
                     <div class="steps__content steps__content--front item">
                         <div class="steps__number title--color-white">5</div>
-                        <p class="steps__text title--color-white title--small">Включайся в процесс<br><span
+                        <p class="steps__text title--color-white title--small">Включайся в процесс<br><span
                                 class="steps__date title--color-primary">3 августа</span>
                         </p>
                         <div class="steps__icon button js-flip-trigger">
@@ -551,7 +568,8 @@
 
                     <div class="steps__content steps__content--back">
                         <p class="steps__descr descr">
-                            Остается только подписать документы, получить все необходимое для работы и... НАЧАТЬ СТАЖИРОВКУ!
+                            Остается только подписать документы, получить все необходимое для работы и... НАЧАТЬ
+                            СТАЖИРОВКУ!
                         </p>
                         <div class="steps__icon button steps__icon--back js-flip-trigger">
                             <img src="img/arrow-down-right.svg" alt="">
@@ -588,15 +606,15 @@
                             бакалавриата/специалитета или выпускники вузов и молодые специалисты до 35 лет
                             включительно при наличии опыта работы или проектной/волонтерской деятельности. На
                             направление «Поддержка пользователей и систем» мы рассматриваем студентов 3–4-го курсов
-                            и выпускников техникумов и колледжей.
+                            и выпускников техникумов и колледжей.
                         </p>
                     </div>
                 </div>
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли совмещать стажировку
-                            с учебой?</span>
+                        <span class="faq__question-text title--color-white title--small">Можно ли совмещать стажировку с
+                            учебой?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -610,9 +628,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да. Стажировка проходит по будням в рабочие часы, но специально для студентов
-                                у нас предусмотрен гибкий график работы. Некоторые команды готовы рассматривать стажеров
-                                на частичную занятость — 20 часов в неделю.
+                                Да. Стажировка проходит по будням в рабочие часы, но специально для студентов
+                                у нас предусмотрен гибкий график работы. Некоторые команды готовы рассматривать стажеров
+                                на частичную занятость — 20 часов в неделю.
                             </p>
                         </div>
                     </div>
@@ -620,8 +638,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Оформляется ли трудовая книжка
-                            на стажировке?</span>
+                        <span class="faq__question-text title--color-white title--small">Оформляется ли трудовая книжка
+                            на стажировке?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -646,8 +664,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли подать заявку
-                            на несколько направлений?</span>
+                        <span class="faq__question-text title--color-white title--small">Можно ли подать заявку
+                            на несколько направлений?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -661,7 +679,7 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да. При заполнении заявки можно выбрать основное направление и направление второго
+                                Да. При заполнении заявки можно выбрать основное направление и направление второго
                                 приоритета. Этапы отбора будут соответствовать основному выбранному направлению. Учти,
                                 что подать заявку можно только один раз.
                             </p>
@@ -671,8 +689,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли попасть на стажировку,
-                            проживая в другом городе?</span>
+                        <span class="faq__question-text title--color-white title--small">Можно ли попасть на стажировку,
+                            проживая в другом городе?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -686,9 +704,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да. Участники со всей России имеют равные шансы и проходят одинаковый путь отбора
-                                на стажировку. Однако важно понимать, что в период прохождения программы всем стажерам
-                                нужно находиться в Москве.
+                                Да. Участники со всей России имеют равные шансы и проходят одинаковый путь отбора
+                                на стажировку. Однако важно понимать, что в период прохождения программы всем стажерам
+                                нужно находиться в Москве.
                             </p>
                         </div>
                     </div>
@@ -696,8 +714,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span
-                            class="faq__question-text title--color-white title--small">Оплачивается ли стажировка?</span>
+                        <span class="faq__question-text title--color-white title--small">Оплачивается ли
+                            стажировка?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -711,8 +729,8 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да. Со стажером заключается срочный трудовой договор. Размер заработной платы зависит
-                                от выбранного направления и режима работы.
+                                Да. Со стажером заключается срочный трудовой договор. Размер заработной платы зависит
+                                от выбранного направления и режима работы.
                                 <br><br>
                                 На направлениях «Бизнес-анализ», «Системный
                                 анализ», «Управление проектами», «Аналитика данных», «Разработка», «Тестирование»,
@@ -744,7 +762,7 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Стажировка длится 6 месяцев.
+                                Стажировка длится 6 месяцев.
                             </p>
                         </div>
                     </div>
@@ -752,8 +770,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли подать заявку, не имея
-                            опыта по выбранному направлению?</span>
+                        <span class="faq__question-text title--color-white title--small">Можно ли подать заявку, не имея
+                            опыта по выбранному направлению?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -767,9 +785,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да, наша программа подходит для студентов и выпускников без профильного опыта. Нам важны
-                                базовые теоретические знания в выбранном направлении, а также соответствующие навыки.
-                                Пожелания по ним указаны в описании направлений.
+                                Да, наша программа подходит для студентов и выпускников без профильного опыта. Нам важны
+                                базовые теоретические знания в выбранном направлении, а также соответствующие навыки.
+                                Пожелания по ним указаны в описании направлений.
                             </p>
                         </div>
                     </div>
@@ -777,8 +795,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">В каком формате проходит
-                            стажировка: очно или удаленно?</span>
+                        <span class="faq__question-text title--color-white title--small">В каком формате проходит
+                            стажировка: очно или удаленно?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -792,9 +810,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Зависит от команды, но чаще всего в гибридном формате: часть недели в офисе, часть — из
-                                дома. В первое время стажировка будет проходить преимущественно в офисе — так стажеры
-                                быстрее адаптируются к задачам и работе с наставниками.
+                                Зависит от команды, но чаще всего в гибридном формате: часть недели в офисе, часть — из
+                                дома. В первое время стажировка будет проходить преимущественно в офисе — так стажеры
+                                быстрее адаптируются к задачам и работе с наставниками.
                             </p>
                         </div>
                     </div>
@@ -802,8 +820,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Учат ли чему‑то
-                            на стажировке?</span>
+                        <span class="faq__question-text title--color-white title--small">Учат ли чему‑то
+                            на стажировке?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -817,9 +835,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Безусловно, погружение в профессию происходит под наставничеством опытного специалиста,
-                                который расскажет о проектах команды и зоне вашей ответственности. За полгода стажировки
-                                точно получится прокачать свои навыки на реальных задачах.
+                                Безусловно, погружение в профессию происходит под наставничеством опытного специалиста,
+                                который расскажет о проектах команды и зоне вашей ответственности. За полгода стажировки
+                                точно получится прокачать свои навыки на реальных задачах.
                             </p>
                         </div>
                     </div>
@@ -827,9 +845,9 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span
-                            class="faq__question-text title--color-white title--small">Предусмотрено ли трудоустройство
-                            после окончания стажировки?</span>
+                        <span class="faq__question-text title--color-white title--small">Предусмотрено ли
+                            трудоустройство
+                            после окончания стажировки?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -843,10 +861,10 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Успешно прошедшие программу стажеры могут быть трудоустроены в команду. Более 60%
-                                стажеров становятся штатными сотрудниками ДИТ. При наличии вакансий можно остаться
-                                в той же команде, в которой проходили стажировку. Если открытых позиций не будет —
-                                мы предложим другие варианты.
+                                Успешно прошедшие программу стажеры могут быть трудоустроены в команду. Более 60%
+                                стажеров становятся штатными сотрудниками ДИТ. При наличии вакансий можно остаться
+                                в той же команде, в которой проходили стажировку. Если открытых позиций не будет —
+                                мы предложим другие варианты.
                             </p>
                         </div>
                     </div>
@@ -854,8 +872,8 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли попасть в штат
-                            до окончания стажировки?</span>
+                        <span class="faq__question-text title--color-white title--small">Можно ли попасть в штат
+                            до окончания стажировки?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -869,9 +887,9 @@
                     <div class="faq__answer js-faq-content">
                         <div class="faq__answer-inner">
                             <p class="descr">
-                                Да, такое может случиться. Все зависит от нескольких факторов: знаний и навыков стажера,
-                                мотивации, а также наличия вакансии в команде. Но все реально, если очень захотеть
-                                и отлично проявить себя.
+                                Да, такое может случиться. Все зависит от нескольких факторов: знаний и навыков стажера,
+                                мотивации, а также наличия вакансии в команде. Но все реально, если очень захотеть
+                                и отлично проявить себя.
                             </p>
                         </div>
                     </div>
@@ -917,7 +935,7 @@
                 <!-- Правая часть: Соцсети и доп. инфо -->
                 <div class="footer__info">
                     <p class="footer__text descr">
-                        А еще в Правительстве Москвы есть много других стажировок — от «HR-города» до «Городской
+                        А еще в Правительстве Москвы есть много других стажировок — от «HR-города» до «Городской
                         экономики»!
                     </p>
                     <div class="footer__social">

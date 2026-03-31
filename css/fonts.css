@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Golos Text';
     src: url(../fonts/GolosText-Regular.ttf);
     font-weight: 400;
@@ -13,6 +13,24 @@
 @font-face {
     font-family: 'Golos Text';
     src: url(../fonts/GolosText-SemiBold.ttf);
+    font-weight: 600;
+} */
+
+@font-face {
+    font-family: 'Golos';
+    src: url(../fonts/golos-text_regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Golos';
+    src: url(../fonts/golos-text_medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Golos';
+    src: url(../fonts/golos-text_demibold.ttf);
     font-weight: 600;
 }
 
