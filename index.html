@@ -15,13 +15,16 @@
     <header class="header">
         <div class="container header__container">
             <!-- Логотипы -->
-            <div class="header__logo-group">
-                <img src="img/city-logo.svg" alt="Твой город" class="header__logo">
-                <img src="img/dit-logo.svg" alt="ДИТ" class="header__logo">
+            <div class="header__wrap">
+                <div class="header__logo-group">
+                    <img src="img/city-logo.svg" alt="Твой город" class="header__logo">
+                    <img src="img/dit-logo.svg" alt="ДИТ" class="header__logo">
+                </div>
+
+                <div class="menu-toggle menu-toggle--active">
+                </div>
             </div>
 
-            <div class="menu-toggle menu-toggle--active">
-            </div>
 
             <!-- Навигация -->
             <div class="header__navigation">
@@ -54,8 +57,14 @@
                 <h1 class="hero__title">ИТ-ГОРОД</h1>
                 <p class="hero__subtitle">оплачиваемая стажировка <br> в Правительстве Москвы</p>
 
-                <p class="hero__description">
+                <p class="hero__description block--mobail-hide">
                     Начни карьеру в ИТ с масштабных цифровых проектов в Департаменте информационных технологий города
+                    Москвы!
+                </p>
+
+                <p class="hero__description block--mobail-show">
+                    Начни карьеру <br> в ИТ с масштабных цифровых проектов в Департаменте информационных технологий
+                    города
                     Москвы!
                 </p>
 
@@ -71,13 +80,19 @@
                     <img src="img/hero_line_1_1-1280.svg" alt="Декор">
                     <img src="img/hero_line_1_2-1280.svg" alt="Декор">
                 </div>
+
+                <div class="hero__decor block--mobail-show">
+                    <img src="img/hero_line_1_1-360.svg" alt="Декор">
+                </div>
             </article>
 
             <!-- Правая карточка (Визуал) -->
             <article class="hero__card hero__card--visual item">
                 <div class="hero__image-wrapper">
                     <div class="hero__block-img">
-                        <img src="img/girl.png" alt="Стажер" class="hero__image">
+                        <img src="img/girl.png" alt="Стажер" class="hero__image block--mobail-hide">
+
+                        <img src="img/girl-360.png" alt="Стажер" class="hero__image block--mobail-show">
                     </div>
 
                     <!-- Декоративные элементы -->
@@ -94,6 +109,12 @@
                         <img src="img/hero_line_2_1-1280.svg" alt="Декор">
                         <img src="img/hero_line_2_2-1280.svg" alt="Декор">
                         <img src="img/hero_decore_star.svg" alt="Декор">
+                    </div>
+
+                    <div class="hero__decor block--mobail-show">
+                        <img src="img/hero_line_2_2-360.svg" alt="Декор">
+                        <img src="img/hero_line_2_1-360.svg" alt="Декор">
+                        <img src="img/hero_decore_star-360.svg" alt="Декор">
                     </div>
                 </div>
                 <p class="hero__slogan">ТЫ СТАЖИРУЕШЬСЯ — МОСКВА МЕНЯЕТСЯ!</p>
@@ -123,7 +144,7 @@
 
         <section class="features section">
             <div class="container" id="features">
-                <h2 class="title">Стажировка «ИТ-город» — это</h2>
+                <h2 class="title features__title">Стажировка «ИТ-город» — это</h2>
 
                 <div class="features__content">
                     <!-- Левая часть: Фото -->
@@ -205,9 +226,10 @@
 
                             <div class="features__item-text title--color-white">
                                 <h3 class="features__item-title">надежность и прозрачность</h3>
-                                <p class="features__item-desc descr">Получи официальное трудоустройство, стаж с первого
-                                    дня
-                                    работы и выплаты 2 раза в месяц</p>
+                                <p class="features__item-desc descr block--mobail-hide">Получи официальное
+                                    трудоустройство, стаж с первого дня работы и выплаты 2 раза в месяц</p>
+                                <p class="features__item-desc descr block--mobail-show">Получи официальное
+                                    трудоустройство, стаж с первого дня работы и выплаты <br> 2 раза в месяц</p>
                             </div>
                         </div>
                     </div>
@@ -217,7 +239,11 @@
                 <div class="features__stats">
                     <div class="features__stat-card">
                         <div class="features__stat-blockicon">
-                            <img src="img/features_icon1.svg" alt="Декор" class="features__stat-icon">
+                            <img src="img/features_icon1.svg" alt="Декор"
+                                class="features__stat-icon block--desktop-show">
+
+                            <img src="img/features_icon1_tablet.svg" alt="Декор"
+                                class="features__stat-icon block--tablet-show block--mobail-show">
                         </div>
                         <span class="features__stat-value title--color-primary">500+</span>
                         <span class="features__stat-label title--color-white title--small">человек
@@ -225,7 +251,11 @@
                     </div>
                     <div class="features__stat-card">
                         <div class="features__stat-blockicon">
-                            <img src="img/features_icon2.svg" alt="Декор" class="features__stat-icon">
+                            <img src="img/features_icon2.svg" alt="Декор"
+                                class="features__stat-icon block--desktop-show">
+
+                            <img src="img/features_icon2_tablet.svg" alt="Декор"
+                                class="features__stat-icon block--tablet-show block--mobail-show">
                         </div>
                         <span class="features__stat-value title--color-primary">2 из 3</span>
                         <span class="features__stat-label title--color-white title--small">стажеров остаются<br>работать
@@ -235,7 +265,11 @@
                     </div>
                     <div class="features__stat-card">
                         <div class="features__stat-blockicon">
-                            <img src="img/features_icon3.svg" alt="Декор" class="features__stat-icon">
+                            <img src="img/features_icon3.svg" alt="Декор"
+                                class="features__stat-icon block--desktop-show">
+
+                            <img src="img/features_icon3_tablet.svg" alt="Декор"
+                                class="features__stat-icon block--tablet-show block--mobail-show">
                         </div>
                         <span class="features__stat-value title--color-primary">20–40</span>
                         <span class="features__stat-label title--color-white title--small">часов в неделю ты<br>можешь
@@ -243,7 +277,11 @@
                     </div>
                     <div class="features__stat-card">
                         <div class="features__stat-blockicon">
-                            <img src="img/features_icon4.svg" alt="Декор" class="features__stat-icon">
+                            <img src="img/features_icon4.svg" alt="Декор"
+                                class="features__stat-icon block--desktop-show">
+
+                            <img src="img/features_icon4_tablet.svg" alt="Декор"
+                                class="features__stat-icon block--tablet-show block--mobail-show">
                         </div>
                         <span class="features__stat-value title--color-primary">до 75 000</span>
                         <span class="features__stat-label title--color-white title--small">рублей в
@@ -265,17 +303,34 @@
                     <h2 class="title about-dit__title">Что такое ДИТ</h2>
 
                     <div class="about-dit__description">
-                        <p class="descr about-dit__text">
+                        <p class="descr about-dit__text block--mobail-hide">
                             <span class="descr--green">Департамент информационных технологий столицы</span> вместе
                             со всеми городскими ведомствами создает
                             и развивает цифровые проекты, которые <span class="descr--green">делают Москву комфортнее,
                                 а жизнь горожан — удобнее
                                 и мобильнее.</span>
                         </p>
-                        <p class="descr about-dit__text">
+                        <p class="descr about-dit__text block--mobail-show">
+                            <span class="descr--green">Департамент информационных технологий столицы</span> вместе
+                            со всеми городскими ведомствами создает <br>
+                            и развивает цифровые проекты, которые <span class="descr--green">делают Москву комфортнее,
+                                <br>
+                                а жизнь горожан — удобнее <br>
+                                и мобильнее.</span>
+                        </p>
+
+                        <p class="descr about-dit__text block--mobail-hide">
                             Для системы управления столицей технологии — это незаменимый инструмент, который применяется
                             во всех отраслях экономики, городского хозяйства и социальной сферы. А для миллионов
                             горожан — повседневный помощник, который позволяет получать сотни услуг и сервисов в удобном
+                            цифровом формате в режиме 24/7/365.
+                        </p>
+                        <p class="descr about-dit__text block--mobail-show">
+                            Для системы управления столицей технологии — это незаменимый инструмент, который применяется
+                            <br>
+                            во всех отраслях экономики, городского хозяйства и социальной сферы. А для миллионов
+                            горожан — повседневный помощник, который позволяет получать сотни услуг <br> и сервисов в
+                            удобном
                             цифровом формате в режиме 24/7/365.
                         </p>
                     </div>
@@ -290,8 +345,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="marquee-wrapper container">
+        <div class="marquee-wrapper container block--mobail-hide">
             <div class="marquee__inner">
                 <div class="partner-chip">
                     <span class="partner-chip__name descr">Узнай Москву</span>
@@ -364,7 +418,89 @@
                 </div>
             </div>
         </div>
+    </section>
 
+    <section class="dit__info block--mobail-show container">
+        <p class="about-dit__highlight title--color-white title--small">
+            Ежегодно ДИТ реализует <br>
+            более <span class="title--color-primary">300 цифровых проектов</span>
+        </p>
+
+        <div class="marquee-wrapper">
+            <div class="marquee__inner">
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Узнай Москву</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo1.svg" alt="Узнай Москву" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Портал поставщиков</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo2.svg" alt="Портал поставщиков" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">ЕМИАС</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo3.svg" alt="ЕМИАС" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Активный гражданин</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo4.svg" alt="Активный гражданин" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Портал mos.ru</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo5.svg" alt="Портал mos.ru" class="partner-chip__icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="marquee__inner">
+                <!-- <div class="partner-chip">
+                    <span class="partner-chip__name descr">Московская электронная школа</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo6.svg" alt="Московская электронная школа" class="partner-chip__icon">
+                    </div>
+                </div> -->
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">RussPass</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo7.svg" alt="RussPass" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Наш город</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo8.svg" alt="Наш город" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Электронный дом</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo9.svg" alt="Электронный дом" class="partner-chip__icon">
+                    </div>
+                </div>
+
+                <div class="partner-chip">
+                    <span class="partner-chip__name descr">Цифровой двойник города</span>
+                    <div class="partner-chip__icon-box">
+                        <img src="img/um-logo10.svg" alt="Цифровой двойник города" class="partner-chip__icon">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="candidates section">
@@ -379,7 +515,7 @@
                         масштабные цифровые проекты и менять столицу к лучшему
                     </p>
 
-                    <p class="candidates__text descr block--tablet-show">
+                    <p class="candidates__text descr block--tablet-show block--mobail-show">
                         <span class="descr--green">Молодых специалистов до 35 лет</span>, которые хотят развивать
                         масштабные цифровые проекты <br> и менять столицу к лучшему
                     </p>
@@ -387,7 +523,11 @@
                     <div class="candidates__block-person">
                         <img src="img/person1.png" alt="Специалист" class="candidates__person">
                     </div>
-                    <img src="img/icon-3d-1.svg" alt="" class="candidates__icon candidates__icon--left">
+                    <img src="img/icon-3d-1.svg" alt=""
+                        class="candidates__icon candidates__icon--left block--mobail-hide">
+
+                    <img src="img/icon-3d-1-mob.svg" alt=""
+                        class="candidates__icon candidates__icon--left block--mobail-show">
                 </article>
 
                 <!-- Карточка 2 -->
@@ -399,7 +539,11 @@
                     <div class="candidates__block-person">
                         <img src="img/person2.png" alt="Студент вуза" class="candidates__person">
                     </div>
-                    <img src="img/icon-3d-2.svg" alt="" class="candidates__icon candidates__icon--right">
+                    <img src="img/icon-3d-2.svg" alt=""
+                        class="candidates__icon candidates__icon--left block--mobail-hide">
+
+                    <img src="img/icon-3d-2-mob.svg" alt=""
+                        class="candidates__icon candidates__icon--left block--mobail-show">
                 </article>
 
                 <!-- Карточка 3 -->
@@ -409,7 +553,7 @@
                         направлению «Поддержка пользователей»
                     </p>
 
-                    <p class="candidates__text descr block--tablet-show">
+                    <p class="candidates__text descr block--tablet-show block--mobail-show">
                         <span class="descr--green">Студентов последних курсов <br> и выпускников колледжей</span><br>по
                         направлению «Поддержка пользователей»
                     </p>
@@ -466,6 +610,7 @@
                             <img src="img/step-decore1.svg" alt="Декор" class="block--desktop-show">
 
                             <img src="img/step-decore1-1280.svg" alt="Декор" class="block--tablet-show">
+                            <img src="img/step-decore1-360.svg" alt="Декор" class="block--mobail-show">
                         </div>
                     </div>
 
@@ -493,6 +638,7 @@
                             <img src="img/step-decore2.svg" alt="Декор" class="block--desktop-show">
 
                             <img src="img/step-decore2-1280.svg" alt="Декор" class="block--tablet-show">
+                            <img src="img/step-decore2-360.svg" alt="Декор" class="block--mobail-show">
                         </div>
                     </div>
 
@@ -519,6 +665,7 @@
                             <img src="img/step-decore3.svg" alt="Декор" class="block--desktop-show">
 
                             <img src="img/step-decore3-1280.svg" alt="Декор" class="block--tablet-show">
+                            <img src="img/step-decore3-360.svg" alt="Декор" class="block--mobail-show">
                         </div>
                     </div>
 
@@ -545,6 +692,7 @@
                         <div class="steps__decor">
                             <img src="img/step-decore4.svg" alt="Декор" class="block--desktop-show">
                             <img src="img/step-decore4-1280.svg" alt="Декор" class="block--tablet-show">
+                            <img src="img/step-decore4-360.svg" alt="Декор" class="block--mobail-show">
                         </div>
                     </div>
 
@@ -572,6 +720,7 @@
                             <img src="img/step-decore5.svg" alt="Декор" class="block--desktop-show">
 
                             <img src="img/step-decore5-1280.svg" alt="Декор" class="block--tablet-show">
+                            <img src="img/step-decore5-360.svg" alt="Декор" class="block--mobail-show">
                         </div>
                     </div>
 
@@ -622,7 +771,12 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли совмещать стажировку с
+                        <span class="faq__question-text title--color-white title--small block--mobail-hide">Можно ли
+                            совмещать стажировку с
+                            учебой?</span>
+
+                        <span class="faq__question-text title--color-white title--small block--mobail-show">Можно ли
+                            совмещать стажировку <br> с
                             учебой?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -881,7 +1035,12 @@
 
                 <div class="faq__item js-faq-item">
                     <button class="faq__question js-faq-trigger">
-                        <span class="faq__question-text title--color-white title--small">Можно ли попасть в штат
+                        <span class="faq__question-text title--color-white title--small block--mobail-hide">Можно ли
+                            попасть в штат
+                            до окончания стажировки?</span>
+
+                        <span class="faq__question-text title--color-white title--small block--mobail-show">Можно ли
+                            попасть <br> в штат
                             до окончания стажировки?</span>
                         <div class="faq__arrow">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -917,10 +1076,12 @@
                     Подать заявку
                 </a>
             </div>
+        </div>
 
-            <div class="cta__visual">
-                <!-- <img src="img/cta_bg.svg" alt="Наша команда" class="cta__team-img"> -->
-            </div>
+        <div class="cta__visual block--mobail-show">
+            <!-- <img src="img/cta_bg.svg" alt="Наша команда" class="cta__team-img"> -->
+
+            <img src="img/cta_bg-360.png" alt="Наша команда" class="cta__team-img">
         </div>
     </section>
 
@@ -930,10 +1091,17 @@
                 <!-- Левая часть: Почта и Лого -->
                 <div class="footer__contacts">
                     <h2 class="footer__title title">Остались вопросы?</h2>
-                    <p class="footer__text descr">
+                    <p class="footer__text descr block--mobail-hide">
                         Пиши на почту <a href="mailto:start-career@mos.ru"
                             class="footer__link descr--green">start-career@mos.ru</a><br>
                         Мы читаем и отвечаем на все письма.
+                    </p>
+
+                    <p class="footer__text descr block--mobail-show">
+                        Пиши на почту <a href="mailto:start-career@mos.ru" class="footer__link descr--green"> <br>
+                            start-career@mos.ru</a><br>
+
+                        <span class="footer__text-info">Мы читаем и отвечаем <br> на все письма.</span>
                     </p>
                     <div class="footer__logos">
                         <img src="img/city-logo.svg" alt="Твой город" class="footer__logo">
@@ -943,8 +1111,14 @@
 
                 <!-- Правая часть: Соцсети и доп. инфо -->
                 <div class="footer__info">
-                    <p class="footer__text descr">
+                    <p class="footer__text descr block--mobail-hide">
                         А еще в Правительстве Москвы есть много других стажировок — от «HR-города» <br> до «Городской
+                        экономики»!
+                    </p>
+
+                    <p class="footer__text descr block--mobail-show">
+                        А еще в Правительстве Москвы <br> есть много других стажировок — <br> от «HR-города» до
+                        «Городской
                         экономики»!
                     </p>
                     <div class="footer__social">
@@ -990,7 +1164,7 @@
                 </div>
             </div>
 
-            <div class="footer__bottom descr">
+            <div class="footer__bottom descr block--mobail-hide">
                 <p class="footer__copyright">© Управление кадровых сервисов Правительства Москвы | Департамент
                     информационных технологий города Москвы, 2026</p>
                 <div class="footer__legal">
@@ -1001,12 +1175,24 @@
                         class="footer__legal-link link" target="_blank">Пользовательское соглашение</a>
                 </div>
             </div>
+
+            <div class="footer__bottom descr block--mobail-show">
+                <div class="footer__legal">
+                    <a href="https://mguu.ru/files/personal_data_policy.pdf" class="footer__legal-link link"
+                        target="_blank">Политика обработки персональных данных</a>
+                    <a href="https://ks.mguu.ru/wp-content/uploads/2025/08/polzovatelskoe-soglashenie.pdf"
+                        class="footer__legal-link link" target="_blank">Пользовательское соглашение</a>
+                </div>
+
+                <p class="footer__copyright">© Управление кадровых сервисов Правительства Москвы | Департамент
+                    информационных технологий города Москвы, 2026</p>
+            </div>
         </div>
     </footer>
 
     <!-- Кнопка вверх -->
     <div class="up-button">
-        <div class="container up-button__inner">
+        <div class="container up-button__inner block--mobail-hide">
             <a href="#top" class="up-button__link">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1014,6 +1200,16 @@
                         fill="white" />
                 </svg>
             </a>
+        </div>
+
+        <div class="up-button__inner block--mobail-show">
+            <div class="up-button__link-mob up-button__link">
+                <div class="container">
+                    <a href="form.html" class="button button--small ">
+                        Подать заявку
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 

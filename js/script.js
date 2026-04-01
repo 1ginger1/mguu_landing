@@ -4,7 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let upScrollAmount = 0;
     let countScroll = 0;
     const header = document.querySelector('.header');
-    const backToTop = document.querySelector('.up-button__link');
+
+    let backToTop;
+
+    if (window.innerWidth < 1279) {
+        backToTop = document.querySelector('.up-button__link-mob');
+    } else {
+        backToTop = document.querySelector('.up-button__link');
+    }
 
     if (backToTop) {
         window.addEventListener('scroll', () => {
@@ -62,22 +69,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Мобильное меню
-    const mobailMenu = document.querySelector('.menu-toggle');
+    const mobailMenu = document.querySelector('.menu-toggle'),
+        mobailNav = document.querySelector('.header__navigation'),
+        navItems = document.querySelectorAll('.header__item');
 
     mobailMenu.addEventListener('click', () => {
         if (mobailMenu.classList.contains('menu-toggle--close')) {
-            mobailMenu.classList.remove('menu-toggle--close');
+            closMenu();
         } else if (mobailMenu.classList.contains('menu-toggle--active')) {
             mobailMenu.classList.add('menu-toggle--close');
+            mobailNav.classList.add('header__navigation-show');
+
+            document.body.classList.toggle('no-scroll');
         }
     });
 
-    // Карусель блока "Что такое ДИТ"
-    const marquee = document.querySelector('.marquee__inner');
-    if (marquee) {
-        // Клонируем содержимое
-        marquee.innerHTML += marquee.innerHTML;
+    navItems.forEach(nav => {
+        nav.addEventListener('click', () => {
+            closMenu();
+        })
+    });
+
+    function closMenu() {
+        mobailMenu.classList.remove('menu-toggle--close');
+        mobailNav.classList.remove('header__navigation-show');
+
+        document.body.classList.toggle('no-scroll');
     }
+
+    const marquees = document.querySelectorAll('.marquee__inner');
+    const speed = 0.5;
+
+    marquees.forEach(marquee => {
+        const originalContent = marquee.innerHTML;
+        marquee.innerHTML = originalContent + originalContent;
+
+        let contentWidth = marquee.scrollWidth / 2 - 5;
+
+        window.addEventListener('resize', () => {
+            contentWidth = marquee.scrollWidth / 2 - 5;
+        });
+
+        let x = 0;
+        let startX = 0;
+        let isDown = false;
+
+        function animate() {
+            if (!isDown) {
+                x += speed;
+            }
+
+            x = (x + contentWidth) % contentWidth;
+
+            marquee.style.transform = `translate3d(${-x}px, 0, 0)`;
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+
+        marquee.addEventListener('touchstart', (e) => {
+            isDown = true;
+            // Текущий x + позиция пальца
+            startX = e.touches[0].pageX + x;
+        }, { passive: true });
+
+        marquee.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+
+            // Блокируем скролл страницы
+            if (e.cancelable) e.preventDefault();
+
+            const currentTouchX = e.touches[0].pageX;
+            // Обновляем x на разницу движения
+            x = startX - currentTouchX;
+        }, { passive: false });
+
+        marquee.addEventListener('touchend', () => {
+            isDown = false;
+        });
+    });
 
     // Блок "Часто задаваемые вопросы"
     const faqItem = document.querySelectorAll('.faq__item'),
@@ -177,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "icon": "img/modal-icon-develop.png",
                 "content":
                     `
-                    <h2 class="modal__title title">Бизнес- и системный анализ</h2>
+                    <h2 class="modal__title title">Разработка</h2>
                     <p class= "modal__subtitle descr" >Выбирай направление, в котором хочешь развиваться.</p>
                     <div class="modal__tags">
                         <button class="tag modal__tag" data-modal-tag="develop-1">Си</button>
@@ -191,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "icon": 'img/modal-icon-project.png',
                 "content":
                     `
-                        <h2 class="modal__title title">Аналитика данных</h2>
+                        <h2 class="modal__title title">Управление проектами</h2>
                         <p class="modal__subtitle">Администратор проектов отвечает за организационные вопросы и координирует работу проекта, контролирует сроки и занимается документальным сопровождением. Поменять на это описание.</p>
 
                         <div class="modal__section">
@@ -603,7 +673,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mainModalVal = modalTag;
 
                 modal.classList.add('modal--active');
-                document.body.style.overflow = 'hidden';
+                document.body.classList.toggle('no-scroll');
             }
         } else if (event.target.closest('.modal__back')) {
             if (modalData[mainModalVal]) {
@@ -616,7 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             modal.classList.remove('modal--active');
-            document.body.style.overflow = '';
+            document.body.classList.toggle('no-scroll');
         });
     });
 });
