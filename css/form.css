@@ -609,10 +609,6 @@ file--no_select {
         background-image: url(../img/form_bg-360.png);
     }
 
-    .header__logo:nth-child(2) {
-        height: 33px;
-    }
-
     .application {
         padding-top: 84px;
         background: none;

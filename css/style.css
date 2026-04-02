@@ -1392,6 +1392,7 @@ html {
         margin-bottom: 0;
         margin-left: -2px;
     }
+
     .header__logo:nth-child(1) {
         height: 36px;
     }
@@ -1957,16 +1958,19 @@ html {
     .header__logo-group {
         height: 39px;
         gap: 24px;
+        align-items: start;
     }
 
     .header__logo:nth-child(1) {
+        margin-top: -2px;
         height: 39px;
         width: 119px;
     }
 
     .header__logo:nth-child(2) {
-        height: 32px;
-        margin-bottom: 0;
+        height: 33px;
+        margin-top: 5px;
+        width: 105px;
     }
 
     .hero__block-img {
