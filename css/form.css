@@ -719,4 +719,8 @@ file--no_select {
     .footer__logo:nth-child(2) {
         margin-top: 2px;
     }
+
+    .up-button {
+        display: none;
+    }
 }
