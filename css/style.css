@@ -2418,7 +2418,7 @@ html {
 
     /* Блок Подвал */
     .footer {
-        background: none;
+        background: url('../img/footer_bg-360.svg') top 35px left 50% / auto no-repeat;
         margin-top: var(--section-spacing);
     }
 

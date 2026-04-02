@@ -13,60 +13,64 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTop = document.querySelector('.up-button__link');
     }
 
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
 
-            if (currentScroll <= 1) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll <= 1) {
+            if (header.classList.contains('header--visible')) {
+                header.classList.remove('header--fixed', 'header--visible');
+            }
+
+            countScroll = 0;
+        }
+
+        if (currentScroll < 100) {
+            if (backToTop) {
+                if (backToTop.classList.contains('up-button__link--visible')) {
+                    backToTop.classList.remove('up-button__link--visible')
+                }
+            }
+
+            countScroll = 0;
+        }
+
+        if (upScrollAmount > currentScroll) {
+            upScrollAmount = upScrollAmount - currentScroll;
+            countScroll += upScrollAmount;
+
+            if (countScroll > 600) {
+                header.classList.add('header--fixed', 'header--visible');
+
+
+                if (backToTop) {
+                    backToTop.classList.add('up-button__link--visible');
+                }
+
+                countScroll = 0;
+            }
+        } else {
+            upScrollAmount = currentScroll - upScrollAmount;
+            countScroll += upScrollAmount;
+
+            if (countScroll > 200) {
+                if (backToTop) {
+                    if (backToTop.classList.contains('up-button__link--visible')) {
+                        backToTop.classList.remove('up-button__link--visible')
+                    }
+                }
+
                 if (header.classList.contains('header--visible')) {
                     header.classList.remove('header--fixed', 'header--visible');
                 }
 
                 countScroll = 0;
             }
-
-            if (currentScroll < 100) {
-                if (backToTop.classList.contains('up-button__link--visible')) {
-                    backToTop.classList.remove('up-button__link--visible')
-                }
-
-                countScroll = 0;
-            }
-
-            if (upScrollAmount > currentScroll) {
-                upScrollAmount = upScrollAmount - currentScroll;
-                countScroll += upScrollAmount;
-
-                if (countScroll > 600) {
-                    header.classList.add('header--fixed', 'header--visible');
-
-                    if (backToTop) {
-                        backToTop.classList.add('up-button__link--visible');
-                    }
-
-                    countScroll = 0;
-                }
-            } else {
-                upScrollAmount = currentScroll - upScrollAmount;
-                countScroll += upScrollAmount;
-
-                if (countScroll > 200) {
-                    if (backToTop.classList.contains('up-button__link--visible')) {
-                        backToTop.classList.remove('up-button__link--visible')
-                    }
-
-                    if (header.classList.contains('header--visible')) {
-                        header.classList.remove('header--fixed', 'header--visible');
-                    }
-
-                    countScroll = 0;
-                }
-            }
+        }
 
 
-            upScrollAmount = currentScroll;
-        });
-    }
+        upScrollAmount = currentScroll;
+    });
 
     // Мобильное меню
     const mobailMenu = document.querySelector('.menu-toggle'),

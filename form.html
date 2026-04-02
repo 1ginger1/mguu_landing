@@ -16,29 +16,31 @@
     <header class="header">
         <div class="container header__container">
             <!-- Логотипы -->
-            <div class="header__logo-group">
-                <img src="img/city-logo.svg" alt="Твой город" class="header__logo">
-                <img src="img/dit-logo.svg" alt="ДИТ" class="header__logo">
+            <div class="header__wrap">
+                <div class="header__logo-group">
+                    <img src="img/city-logo.svg" alt="Твой город" class="header__logo">
+                    <img src="img/dit-logo.svg" alt="ДИТ" class="header__logo">
+                </div>
+
+                <div class="menu-toggle menu-toggle--active">
+                </div>
             </div>
+
 
             <!-- Навигация -->
             <div class="header__navigation">
                 <!-- Меню -->
                 <nav class="header__menu">
                     <ul class="header__list">
-                        <li class="header__item"><a href="index.html#features" class="header__link link">Об
-                                ИТ-стажировке</a></li>
+                        <li class="header__item"><a href="#features" class="header__link link">Об ИТ-стажировке</a></li>
                         <!-- Пример активной ссылки с модификатором -->
-                        <li class="header__item"><a href="index.html#about-dit" class="header__link link">Что
+                        <li class="header__item"><a href="#about-dit" class="header__link link">Что
                                 такое ДИТ</a>
                         </li>
-                        <li class="header__item"><a href="index.html#candidates" class="header__link link">Для кого</a>
-                        </li>
-                        <li class="header__item"><a href="index.html#directions"
-                                class="header__link link">Направления</a></li>
-                        <li class="header__item"><a href="index.html#steps" class="header__link link">Этапы</a></li>
-                        <li class="header__item"><a href="index.html#faq" class="header__link link">Частые вопросы</a>
-                        </li>
+                        <li class="header__item"><a href="#candidates" class="header__link link">Для кого</a></li>
+                        <li class="header__item"><a href="#directions" class="header__link link">Направления</a></li>
+                        <li class="header__item"><a href="#steps" class="header__link link">Этапы</a></li>
+                        <li class="header__item"><a href="#faq" class="header__link link">Частые вопросы</a></li>
                     </ul>
                 </nav>
             </div>
@@ -367,9 +369,10 @@
                     </div>
 
 
-                    <h3 class="form__label title--color-white form__label-internship">Готов(а) рассматривать альтернативное направление</h3>
+                    <h3 class="form__label title--color-white form__label-internship">Готов(а) рассматривать
+                        альтернативное направление</h3>
                     <div class="form__radio-group">
-                        <div class="form__radio-btns">
+                        <div class="form__radio-btns" id="alternative">
                             <label class="radio">
                                 <input type="radio" name="alternative" class="radio__input" value="yes">
                                 <span class="radio__custom"></span>
@@ -421,11 +424,12 @@
                         <span class="form__error">Укажи альтернативное направление стажировки</span>
                     </div>
 
-                    <h3 class="form__label title--color-white form__label-format form__label-internship">Готов(а) рассматривать стажировку
+                    <h3 class="form__label title--color-white form__label-format form__label-internship">Готов(а)
+                        рассматривать стажировку
                         только в удаленном
                         формате</h3>
                     <div class="form__radio-group">
-                        <div class="form__radio-btns">
+                        <div class="form__radio-btns" id="remote_work">
                             <label class="radio">
                                 <input type="radio" name="remote_work" class="radio__input" value="yes">
                                 <span class="radio__custom"></span>
@@ -450,7 +454,7 @@
                     <div class="select">
                         <input type="hidden" name="source">
 
-                        <button type="button" class="select__header form__input">
+                        <button type="button" class="select__header form__input" id="final">
                             <span class="select__current">Поделись, откуда узнал(а) о стажировке «ИТ-город»</span>
 
                             <div class="select__arrow">
