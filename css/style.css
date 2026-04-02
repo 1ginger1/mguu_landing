@@ -1382,13 +1382,18 @@ html {
         gap: 20px;
     }
 
-    .header__logo:nth-child(1) {
-        height: 36px;
+    .header__logo-group {
+        height: 35px;
     }
 
     .header__logo:nth-child(2) {
-        height: 27px;
-        margin-bottom: 3px;
+        height: 29px;
+        width: 87px;
+        margin-bottom: 0;
+        margin-left: -2px;
+    }
+    .header__logo:nth-child(1) {
+        height: 36px;
     }
 
     .header__list,
@@ -2419,7 +2424,7 @@ html {
     /* Блок Подвал */
     .footer {
         background: url('../img/footer_bg-360.svg') top 35px left 50% / auto no-repeat;
-        /* margin-top: var(--section-spacing); */
+        margin-top: var(--section-spacing);
     }
 
     .footer__contacts {

@@ -475,7 +475,7 @@ file--no_select {
         gap: 21px;
     }
 
-    .header__logo-group {
+    /* .header__logo-group {
         height: 35px;
     }
 
@@ -484,7 +484,7 @@ file--no_select {
         width: 87px;
         margin-bottom: 0;
         margin-left: -2px;
-    }
+    } */
 
     .form {
         max-width: 900px;
