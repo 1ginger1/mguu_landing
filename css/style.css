@@ -153,7 +153,7 @@ html {
 }
 
 .block--mobail-show {
-    display: none;
+    display: none !important;
 }
 
 .menu-toggle {
@@ -1864,7 +1864,7 @@ html {
     }
 
     .block--mobail-show {
-        display: block;
+        display: block !important;
     }
 
     .block--mobail-hide {

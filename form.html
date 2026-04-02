@@ -26,15 +26,19 @@
                 <!-- Меню -->
                 <nav class="header__menu">
                     <ul class="header__list">
-                        <li class="header__item"><a href="index.html#features" class="header__link link">Об ИТ-стажировке</a></li>
+                        <li class="header__item"><a href="index.html#features" class="header__link link">Об
+                                ИТ-стажировке</a></li>
                         <!-- Пример активной ссылки с модификатором -->
                         <li class="header__item"><a href="index.html#about-dit" class="header__link link">Что
                                 такое ДИТ</a>
                         </li>
-                        <li class="header__item"><a href="index.html#candidates" class="header__link link">Для кого</a></li>
-                        <li class="header__item"><a href="index.html#directions" class="header__link link">Направления</a></li>
+                        <li class="header__item"><a href="index.html#candidates" class="header__link link">Для кого</a>
+                        </li>
+                        <li class="header__item"><a href="index.html#directions"
+                                class="header__link link">Направления</a></li>
                         <li class="header__item"><a href="index.html#steps" class="header__link link">Этапы</a></li>
-                        <li class="header__item"><a href="index.html#faq" class="header__link link">Частые вопросы</a></li>
+                        <li class="header__item"><a href="index.html#faq" class="header__link link">Частые вопросы</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -344,7 +348,7 @@
                         <span class="form__error">Укажи направление стажировки</span>
                     </div>
 
-                    <h3 class="form__label title--color-white">Укажи желаемый график работы</h3>
+                    <h3 class="form__label title--color-white form__label-internship">Укажи желаемый график работы</h3>
                     <div class="form__radio-group">
                         <div class="form__radio-btns">
                             <label class="radio">
@@ -363,7 +367,7 @@
                     </div>
 
 
-                    <h3 class="form__label title--color-white">Готов(а) рассматривать альтернативное направление</h3>
+                    <h3 class="form__label title--color-white form__label-internship">Готов(а) рассматривать альтернативное направление</h3>
                     <div class="form__radio-group">
                         <div class="form__radio-btns">
                             <label class="radio">
@@ -417,7 +421,8 @@
                         <span class="form__error">Укажи альтернативное направление стажировки</span>
                     </div>
 
-                    <h3 class="form__label title--color-white form__label-format">Готов(а) рассматривать стажировку только в удаленном
+                    <h3 class="form__label title--color-white form__label-format form__label-internship">Готов(а) рассматривать стажировку
+                        только в удаленном
                         формате</h3>
                     <div class="form__radio-group">
                         <div class="form__radio-btns">
@@ -434,7 +439,8 @@
                         </div>
 
                         <span class="form__error">Укажи, готов(а) ли рассмотреть только удаленный формат</span>
-                        <span class="form__info">* На стажировке мало полностью удаленных вакансий. Если по твоему направлению они будут, тогда ты сможешь принять участие в отборе.</span>
+                        <span class="form__info">* На стажировке мало полностью удаленных вакансий. Если по твоему
+                            направлению они будут, тогда ты сможешь принять участие в отборе.</span>
                     </div>
                 </div>
 
@@ -533,10 +539,17 @@
                 <!-- Левая часть: Почта и Лого -->
                 <div class="footer__contacts">
                     <h2 class="footer__title title">Остались вопросы?</h2>
-                    <p class="footer__text descr">
+                    <p class="footer__text descr block--mobail-hide">
                         Пиши на почту <a href="mailto:start-career@mos.ru"
                             class="footer__link descr--green">start-career@mos.ru</a><br>
                         Мы читаем и отвечаем на все письма.
+                    </p>
+
+                    <p class="footer__text descr block--mobail-show">
+                        Пиши на почту <a href="mailto:start-career@mos.ru" class="footer__link descr--green"> <br>
+                            start-career@mos.ru</a><br>
+
+                        <span class="footer__text-info">Мы читаем и отвечаем <br> на все письма.</span>
                     </p>
                     <div class="footer__logos">
                         <img src="img/city-logo.svg" alt="Твой город" class="footer__logo">
@@ -546,12 +559,18 @@
 
                 <!-- Правая часть: Соцсети и доп. инфо -->
                 <div class="footer__info">
-                    <p class="footer__text descr">
-                        А еще в Правительстве Москвы есть много других стажировок — от «HR-города» до «Городской
+                    <p class="footer__text descr block--mobail-hide">
+                        А еще в Правительстве Москвы есть много других стажировок — от «HR-города» <br> до «Городской
+                        экономики»!
+                    </p>
+
+                    <p class="footer__text descr block--mobail-show">
+                        А еще в Правительстве Москвы <br> есть много других стажировок — <br> от «HR-города» до
+                        «Городской
                         экономики»!
                     </p>
                     <div class="footer__social">
-                        <a href="https://talent.mos.ru/" class="footer__social-link">
+                        <a href="https://talent.mos.ru/" class="footer__social-link link" target="_blank">
                             <svg width="36" height="41" viewBox="0 0 36 41" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -559,8 +578,9 @@
                                     fill="white" />
                             </svg>
                         </a>
-                        <a href="https://vk.com/moscow_career" class="footer__social-link"><svg width="36" height="41" viewBox="0 0 36 41"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="https://vk.com/moscow_career" class="footer__social-link link" target="_blank"><svg
+                                width="36" height="41" viewBox="0 0 36 41" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_35935_36319)">
                                     <mask id="mask0_35935_36319" style="mask-type:luminance" maskUnits="userSpaceOnUse"
                                         x="-1" y="0" width="37" height="37">
@@ -580,8 +600,9 @@
                                 </defs>
                             </svg>
                         </a>
-                        <a href="https://t.me/moscow_career" class="footer__social-link"><svg width="37" height="41" viewBox="0 0 37 41"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="https://t.me/moscow_career" class="footer__social-link link" target="_blank"><svg
+                                width="37" height="41" viewBox="0 0 37 41" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M35.2187 4L1.21875 17.5L13.7451 19.3M35.2187 4L30.7451 31L13.7451 19.3M35.2187 4L13.7451 19.3M13.7451 19.3V29.2L19.5591 23.3014"
                                     stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -591,7 +612,7 @@
                 </div>
             </div>
 
-            <div class="footer__bottom descr">
+            <div class="footer__bottom descr block--mobail-hide">
                 <p class="footer__copyright">© Управление кадровых сервисов Правительства Москвы | Департамент
                     информационных технологий города Москвы, 2026</p>
                 <div class="footer__legal">
@@ -601,6 +622,18 @@
                     <a href="https://ks.mguu.ru/wp-content/uploads/2025/08/polzovatelskoe-soglashenie.pdf"
                         class="footer__legal-link link" target="_blank">Пользовательское соглашение</a>
                 </div>
+            </div>
+
+            <div class="footer__bottom descr block--mobail-show">
+                <div class="footer__legal">
+                    <a href="https://mguu.ru/files/personal_data_policy.pdf" class="footer__legal-link link"
+                        target="_blank">Политика обработки персональных данных</a>
+                    <a href="https://ks.mguu.ru/wp-content/uploads/2025/08/polzovatelskoe-soglashenie.pdf"
+                        class="footer__legal-link link" target="_blank">Пользовательское соглашение</a>
+                </div>
+
+                <p class="footer__copyright">© Управление кадровых сервисов Правительства Москвы | Департамент
+                    информационных технологий города Москвы, 2026</p>
             </div>
         </div>
     </footer>
